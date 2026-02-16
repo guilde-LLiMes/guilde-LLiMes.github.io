@@ -34,6 +34,15 @@
     border-color: var(--link-color);
     color: var(--link-color);
   }
+
+  .site-title {
+    font-family: "Courier New", Courier, "Nimbus Mono L", "Liberation Mono", monospace;
+    letter-spacing: 0.01em;
+  }
+
+  .site-title .logo-accent {
+    color: #adca67;
+  }
 </style>
 
 <script>
@@ -59,6 +68,35 @@
     const getPreference = () => {
       const stored = localStorage.getItem(KEY);
       return themes.includes(stored) ? stored : "system";
+    };
+
+    const styleLogoText = () => {
+      const title = document.querySelector(".site-title");
+      if (!title) return;
+      if (title.dataset.logoStyled === "true") return;
+
+      const original = title.textContent || "";
+      const chars = original.split("");
+      let lCount = 0;
+      let mDone = false;
+
+      const html = chars
+        .map((char) => {
+          if (char === "L" && lCount < 2) {
+            lCount += 1;
+            return '<span class="logo-accent">L</span>';
+          }
+          if (char === "M" && !mDone) {
+            mDone = true;
+            return '<span class="logo-accent">M</span>';
+          }
+          return char;
+        })
+        .join("");
+
+      title.setAttribute("aria-label", original);
+      title.innerHTML = html;
+      title.dataset.logoStyled = "true";
     };
 
     const applyTheme = (preference) => {
@@ -93,6 +131,7 @@
     };
 
     const init = () => {
+      styleLogoText();
       mountInAuxNav();
       let preference = getPreference();
       applyTheme(preference);

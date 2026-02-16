@@ -9,6 +9,8 @@ permalink: /
 
 **A framework for building LLM coding guidelines that actually work.**
 
+> **Contributing to the documentation?** Start with the [Contributing Guide](CONTRIBUTING.md). It defines the issue process, PR workflow, and quality bar we use to keep this framework strong.
+
 Most teams using LLMs for code generation struggle with the same problem: the model doesn't know your project. It doesn't know your stack, your conventions, your architecture decisions, or what it should never touch. So it guesses — and the guesses are inconsistent, sometimes wrong, and expensive to fix.
 
 The fix isn't better prompts. It's better project context.
@@ -41,6 +43,10 @@ Start with 3 must-haves. Add more as you see what the LLM gets wrong.
 | Understand the full framework | [Why guidelines matter](docs/00-introduction/why-guidelines-matter.md) → read through Fundamentals → all Must-haves | ~2 hrs |
 | Set up a specific tool | [Tool guides](docs/05-tool-guides/index.md) → your tool → reference Must-haves for content | ~30 min |
 | Understand LLM context limits | [Token budgets](docs/01-fundamentals/token-budgets.md) | ~10 min |
+
+## For Contributors
+
+If you want to improve this framework, use the [Contributing Guide](CONTRIBUTING.md) before opening a PR. We intentionally ask contributors to invest in the core concepts first so new content raises the quality bar instead of adding noise.
 
 ## Table of Contents
 
@@ -94,6 +100,7 @@ Start with 3 must-haves. Add more as you see what the LLM gets wrong.
 
 ### Reference
 - [Glossary](glossary.md) — key terms and definitions
+- [Contributing Guide](CONTRIBUTING.md) — issue process, PR workflow, and review criteria
 
 ---
 

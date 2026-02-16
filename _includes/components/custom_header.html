@@ -1,13 +1,10 @@
-<div id="theme-switcher-root" class="theme-switcher" aria-label="Theme switcher" role="group">
-  <button type="button" data-theme="light" aria-label="Use light theme">Light</button>
-  <button type="button" data-theme="dark" aria-label="Use dark theme">Dark</button>
-  <button type="button" data-theme="system" aria-label="Use system theme">System</button>
+<div id="theme-switcher-root" class="theme-switcher">
+  <button id="theme-cycle-button" type="button" aria-live="polite" aria-label="Cycle theme">Theme: System</button>
 </div>
 
 <style>
   .theme-switcher {
     display: flex;
-    gap: 0.4rem;
     align-items: center;
   }
 
@@ -16,23 +13,22 @@
     padding: 0.22rem 0.5rem;
     border: 1px solid var(--border-color);
     border-radius: 999px;
-    background: var(--body-background-color);
+    background: transparent;
     color: var(--body-text-color);
     cursor: pointer;
     line-height: 1.2;
   }
 
-  .theme-switcher button.active {
-    background: var(--link-color);
+  .theme-switcher button:hover {
     border-color: var(--link-color);
-    color: #fff;
+    color: var(--link-color);
   }
 </style>
 
 <script>
   (() => {
     const KEY = "theme-preference";
-    const themes = ["light", "dark", "system"];
+    const themes = ["system", "light", "dark"];
     const media = window.matchMedia("(prefers-color-scheme: dark)");
 
     const resolveTheme = (preference) => {
@@ -40,12 +36,18 @@
       return preference === "dark" ? "dark" : "light";
     };
 
-    const setActiveButton = (preference) => {
-      document.querySelectorAll(".theme-switcher [data-theme]").forEach((button) => {
-        const isActive = button.dataset.theme === preference;
-        button.classList.toggle("active", isActive);
-        button.setAttribute("aria-pressed", isActive ? "true" : "false");
-      });
+    const nextTheme = (preference) => {
+      const index = themes.indexOf(preference);
+      return themes[(index + 1) % themes.length];
+    };
+
+    const formatLabel = (preference) => {
+      return "Theme: " + preference.charAt(0).toUpperCase() + preference.slice(1);
+    };
+
+    const getPreference = () => {
+      const stored = localStorage.getItem(KEY);
+      return themes.includes(stored) ? stored : "system";
     };
 
     const applyTheme = (preference) => {
@@ -53,12 +55,12 @@
       if (window.jtd && typeof window.jtd.setTheme === "function") {
         window.jtd.setTheme(resolved);
       }
-      setActiveButton(preference);
-    };
 
-    const getPreference = () => {
-      const stored = localStorage.getItem(KEY);
-      return themes.includes(stored) ? stored : "system";
+      const button = document.getElementById("theme-cycle-button");
+      if (button) {
+        button.textContent = formatLabel(preference);
+        button.setAttribute("aria-label", "Theme mode: " + preference + ". Click to change.");
+      }
     };
 
     const saveAndApply = (preference) => {
@@ -79,12 +81,16 @@
         auxNav.appendChild(root);
       }
 
-      const initialPreference = getPreference();
-      applyTheme(initialPreference);
+      let preference = getPreference();
+      applyTheme(preference);
 
-      document.querySelectorAll(".theme-switcher [data-theme]").forEach((button) => {
-        button.addEventListener("click", () => saveAndApply(button.dataset.theme));
-      });
+      const button = document.getElementById("theme-cycle-button");
+      if (button) {
+        button.addEventListener("click", () => {
+          preference = nextTheme(preference);
+          saveAndApply(preference);
+        });
+      }
     });
 
     media.addEventListener("change", () => {

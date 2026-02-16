@@ -1,0 +1,84 @@
+name: Docs Version
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - README.md
+      - docs/**
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: docs-version-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  bump-docs-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update docs_version in _config.yml
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          config_file="_config.yml"
+          if [[ ! -f "$config_file" ]]; then
+            echo "Missing $config_file"
+            exit 1
+          fi
+
+          target_version="$(git log -1 --format='%cd' --date=format:'%Y.%m' -- README.md docs || true)"
+          if [[ -z "$target_version" ]]; then
+            target_version="$(date -u +%Y.%m)"
+          fi
+
+          current_version="$(sed -n 's/^docs_version:[[:space:]]*//p' "$config_file" | head -n 1)"
+          echo "Current version: ${current_version:-<none>}"
+          echo "Target version: $target_version"
+
+          if [[ "$current_version" == "$target_version" ]]; then
+            echo "No version change needed."
+            exit 0
+          fi
+
+          if grep -q '^docs_version:[[:space:]]*' "$config_file"; then
+            awk -v v="$target_version" '
+              /^docs_version:[[:space:]]*/ { print "docs_version: " v; next }
+              { print }
+            ' "$config_file" > "${config_file}.tmp"
+            mv "${config_file}.tmp" "$config_file"
+          else
+            {
+              printf 'docs_version: %s\n' "$target_version"
+              cat "$config_file"
+            } > "${config_file}.tmp"
+            mv "${config_file}.tmp" "$config_file"
+          fi
+
+      - name: Commit and push if changed
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- _config.yml; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          echo "Changed files:"
+          git diff --name-only -- _config.yml
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _config.yml
+          git commit -m "chore(docs): bump docs_version [skip ci]"
+          git push

@@ -1,0 +1,30 @@
+title: guide-LLiMes
+description: A framework for building LLM coding guidelines that actually work.
+url: https://guilde-llimes.github.io
+
+remote_theme: just-the-docs/just-the-docs
+
+color_scheme: dark
+
+aux_links:
+  "GitHub":
+    - "https://github.com/guilde-LLiMes/guilde-LLiMes.github.io"
+
+nav_external_links:
+  - title: GitHub
+    url: https://github.com/guilde-LLiMes/guilde-LLiMes.github.io
+
+heading_anchors: true
+search_enabled: true
+
+back_to_top: true
+back_to_top_text: "Back to top"
+
+footer_content: "guide-LLiMes &mdash; Build LLM coding guidelines that work."
+
+exclude:
+  - input.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/

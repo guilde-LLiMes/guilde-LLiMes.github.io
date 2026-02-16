@@ -97,4 +97,4 @@ Start with 3 must-haves. Add more as you see what the LLM gets wrong.
 ---
 
 [![GitHub stars](https://img.shields.io/github/stars/guilde-LLiMes/guilde-LLiMes.github.io?style=social)](https://github.com/guilde-LLiMes/guilde-LLiMes.github.io)
-[MIT License](LICENSE.md) | [GitHub](https://github.com/guilde-LLiMes/guilde-LLiMes.github.io)
+[guilde-LLiMes.github.io](https://guilde-llimes.github.io) | [MIT License](LICENSE.md) | [GitHub](https://github.com/guilde-LLiMes/guilde-LLiMes.github.io)

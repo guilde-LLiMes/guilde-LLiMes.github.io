@@ -1,8 +1,19 @@
 <div id="theme-switcher-root" class="theme-switcher">
-  <button id="theme-cycle-button" type="button" aria-live="polite" aria-label="Cycle theme">Theme: System</button>
+  <button id="theme-cycle-button" type="button" aria-live="polite" aria-label="Cycle theme">🖥 System</button>
 </div>
 
 <style>
+  .aux-nav .aux-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .aux-nav .aux-nav-list-item {
+    margin: 0;
+  }
+
   .theme-switcher {
     display: flex;
     align-items: center;
@@ -29,6 +40,7 @@
   (() => {
     const KEY = "theme-preference";
     const themes = ["system", "light", "dark"];
+    const icons = { system: "🖥", light: "☀", dark: "🌙" };
     const media = window.matchMedia("(prefers-color-scheme: dark)");
 
     const resolveTheme = (preference) => {
@@ -41,9 +53,8 @@
       return themes[(index + 1) % themes.length];
     };
 
-    const formatLabel = (preference) => {
-      return "Theme: " + preference.charAt(0).toUpperCase() + preference.slice(1);
-    };
+    const formatLabel = (preference) =>
+      icons[preference] + " " + preference.charAt(0).toUpperCase() + preference.slice(1);
 
     const getPreference = () => {
       const stored = localStorage.getItem(KEY);
@@ -68,19 +79,21 @@
       applyTheme(preference);
     };
 
-    document.addEventListener("DOMContentLoaded", () => {
+    const mountInAuxNav = () => {
       const root = document.getElementById("theme-switcher-root");
       const auxList = document.querySelector(".aux-nav-list");
-      const auxNav = document.querySelector(".aux-nav");
       if (root && auxList && !root.closest(".aux-nav")) {
         const item = document.createElement("li");
         item.className = "aux-nav-list-item";
         item.appendChild(root);
         auxList.appendChild(item);
-      } else if (root && auxNav && !root.closest(".aux-nav")) {
-        auxNav.appendChild(root);
+        return true;
       }
+      return !!(root && root.closest(".aux-nav"));
+    };
 
+    const init = () => {
+      mountInAuxNav();
       let preference = getPreference();
       applyTheme(preference);
 
@@ -91,11 +104,23 @@
           saveAndApply(preference);
         });
       }
-    });
+    };
 
-    media.addEventListener("change", () => {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+
+    const onSystemThemeChange = () => {
       const preference = getPreference();
       if (preference === "system") applyTheme("system");
-    });
+    };
+
+    if (typeof media.addEventListener === "function") {
+      media.addEventListener("change", onSystemThemeChange);
+    } else if (typeof media.addListener === "function") {
+      media.addListener(onSystemThemeChange);
+    }
   })();
 </script>

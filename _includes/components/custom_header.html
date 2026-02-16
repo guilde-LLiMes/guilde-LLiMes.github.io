@@ -1,4 +1,4 @@
-<div class="theme-switcher" aria-label="Theme switcher" role="group">
+<div id="theme-switcher-root" class="theme-switcher" aria-label="Theme switcher" role="group">
   <button type="button" data-theme="light" aria-label="Use light theme">Light</button>
   <button type="button" data-theme="dark" aria-label="Use dark theme">Dark</button>
   <button type="button" data-theme="system" aria-label="Use system theme">System</button>
@@ -9,7 +9,6 @@
     display: flex;
     gap: 0.4rem;
     align-items: center;
-    margin-left: auto;
   }
 
   .theme-switcher button {
@@ -68,6 +67,18 @@
     };
 
     document.addEventListener("DOMContentLoaded", () => {
+      const root = document.getElementById("theme-switcher-root");
+      const auxList = document.querySelector(".aux-nav-list");
+      const auxNav = document.querySelector(".aux-nav");
+      if (root && auxList && !root.closest(".aux-nav")) {
+        const item = document.createElement("li");
+        item.className = "aux-nav-list-item";
+        item.appendChild(root);
+        auxList.appendChild(item);
+      } else if (root && auxNav && !root.closest(".aux-nav")) {
+        auxNav.appendChild(root);
+      }
+
       const initialPreference = getPreference();
       applyTheme(initialPreference);
 

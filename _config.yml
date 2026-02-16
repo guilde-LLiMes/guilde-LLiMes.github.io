@@ -21,6 +21,8 @@ back_to_top_text: "Back to top"
 footer_content: "guide-LLiMes &mdash; Build LLM coding guidelines that work."
 
 exclude:
+  - AGENTS.md
+  - CLAUDE.md
   - input.md
   - Gemfile
   - Gemfile.lock

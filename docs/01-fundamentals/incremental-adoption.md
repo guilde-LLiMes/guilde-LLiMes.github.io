@@ -19,7 +19,7 @@ Write 3 rules → Use them → See what the LLM gets wrong → Write rules for t
 
 Your guidelines should be driven by actual LLM failures, not theoretical completeness.
 
-## Week 1: The Minimum Viable Guidelines
+## Stage 1: Minimum Viable Guidelines
 
 Pick the 3 must-haves that address your project's most obvious context gaps.
 
@@ -52,17 +52,17 @@ __tests__/      → Mirrors src/ structure
 
 This takes 15 minutes to write and immediately prevents the most common LLM mistakes.
 
-## Month 1: Responding to Friction
+## Stage 2: Responding to Friction
 
-After a week of using your initial guidelines, you'll notice patterns:
+After using your initial guidelines, you'll notice patterns:
 
 - "The model keeps writing tests with raw SQL instead of using our fixtures" → Add [test data conventions](../03-should-have/test-data-conventions.md)
 - "It created a PUT endpoint that breaks our versioning" → Add [API contracts](../02-must-have/api-contracts.md)
 - "It logged a user token in a debug statement" → Add [security basics](../02-must-have/security-basics.md)
 
-Each fix is one guideline addition, driven by a real problem. By the end of the month, you might have 6-8 must-haves and 2-3 should-haves.
+Each fix is one guideline addition, driven by a real problem. By the end of this stage, you might have 6-8 must-haves and 2-3 should-haves.
 
-## Quarter 1: Maturity
+## Stage 3: Maturity
 
 By now your guidelines are battle-tested. You've added rules that address real failure modes and removed ones that didn't help.
 

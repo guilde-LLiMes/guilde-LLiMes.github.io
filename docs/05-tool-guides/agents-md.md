@@ -79,37 +79,28 @@ project/
 # AGENTS.md
 
 ## Project
-Task management API for small teams. REST API, no frontend.
-Entities: User, Team, Task, Comment.
-NOT: real-time, file storage, notifications, billing.
+[System scope, key concepts, explicit out-of-scope]
 
 ## Stack
-TypeScript 5.4, Node 20, Express, PostgreSQL 16 (Prisma ORM), Redis.
-Tests: Vitest. Lint: ESLint + Prettier.
+[Languages, frameworks, architecture, major dependencies]
 
 ## Structure
-src/routes/ → handlers | src/services/ → logic | src/repos/ → data access
-src/models/ → Prisma models | src/middleware/ → auth, errors
-routes → services → repos (one direction)
+[Directory placement rules + dependency direction]
 
-## Code Style
-camelCase vars/functions, PascalCase types/classes, UPPER_SNAKE constants.
-Errors: AppError(code, message, status). Catch at route level only.
-Logs: structured JSON via pino. Never log tokens or PII.
+## Standards
+[Naming, formatting, error handling, logging]
 
 ## Testing
-Vitest + supertest. Unit: mock deps. Integration: testcontainers.
-Tests in __tests__/ adjacent to source. Factories in tests/factories/.
+[Test levels, boundaries, file locations, required checks]
 
 ## Security
-JWT auth via middleware on all routes except /health, /auth/*.
-Secrets in env vars. Never hardcode. Never commit .env files.
+[Auth/data handling/secrets rules]
 
 ## Boundaries
-DO NOT modify: prisma/migrations/, .github/workflows/, Dockerfile, .env*
-After changes run: npm run typecheck && npm run test
-Ask before: schema changes, new dependencies, auth modifications.
+[Protected files, ask-first changes, verification commands]
 ```
+
+Use this as a structure skeleton. Populate it with your own project constraints rather than copying domain-specific content.
 
 ## AGENTS.md vs Other Formats
 

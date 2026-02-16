@@ -92,45 +92,31 @@ project/
 
 **File references**: Use `@filename` in CLAUDE.md to reference other documentation files (up to 5 levels deep).
 
-## Example: Compressed CLAUDE.md
+## Example: Minimal CLAUDE.md Skeleton
 
 ```markdown
-# Project: Invoice Processor
+# Project Guidelines
 
 ## Scope
-Invoice processing API for freelancers. PDF upload, OCR extraction, CSV/QuickBooks export.
-NOT: payments, tax calc, multi-currency, analytics.
+[System intent, boundaries, explicit out-of-scope]
 
 ## Stack
-Python 3.12, FastAPI, SQLAlchemy 2.0 (async), PostgreSQL 16, Redis, Celery.
-Tests: pytest + httpx. Lint: Ruff. Types: mypy (strict).
+[Languages, frameworks, major dependencies, banned alternatives]
 
 ## Structure
-src/api/ → routers (thin) | src/services/ → logic | src/repos/ → DB queries
-src/models/ → ORM | src/schemas/ → Pydantic | tests/ mirrors src/
-
-Import direction: api → services → repos → models (one way only)
+[Directory placement rules + dependency direction]
 
 ## Standards
-Naming: snake_case everywhere. Files: snake_case.py.
-Errors: AppError(code, message, status). Throw in services, catch in middleware.
-Logging: structlog, JSON. Never log tokens, PII, or passwords.
+[Naming, formatting, error handling, logging, side-effect rules]
 
 ## Testing
-pytest + httpx for integration. Unit: mock external deps. Integration: testcontainers.
-All public functions get tests. Factories in tests/factories/.
+[Test levels, boundaries, file locations, required verification]
 
-## Security
-JWT via FastAPI Depends. All routes protected except /health, /auth/login.
-Secrets: env vars via src/config.py. Never hardcode. Never commit .env.
-
-## Guardrails
-NEVER modify: alembic/versions/, .github/workflows/, docker-compose.yml, .env*
-After changes: pytest && mypy src/ && ruff check src/
-Ask before: schema changes, new dependencies, auth changes.
+## Security and Guardrails
+[Secrets/auth rules, protected files, ask-first changes, run-after checks]
 ```
 
-47 lines. Covers all must-haves. Dense, scannable, actionable.
+Use this as a scaffold, not a template to copy verbatim. Fill each section with project-specific constraints from the must-have pages.
 
 ## Common Issues
 

@@ -17,7 +17,7 @@ Wrong file placement breaks imports, violates module boundaries, and creates an 
 
 - **Top-level layout** — what each root directory contains
 - **Module boundaries** — what can import from what
-- **Where new files go** — rules for adding routes, services, models, tests, configs
+- **Where new files go** — rules for adding features, modules, tests, configs, scripts
 - **Naming conventions for files and directories** — kebab-case, PascalCase, etc.
 - **What doesn't belong in the repo** — generated files, build output, environment files
 
@@ -26,7 +26,7 @@ Wrong file placement breaks imports, violates module boundaries, and creates an 
 1. **Map your current structure.** Run `tree -L 2` or equivalent and document what you see.
 2. **Annotate each directory.** A one-line description of what goes there.
 3. **State the import rules.** Which layers can depend on which? This prevents the model from creating circular dependencies or violating your architecture.
-4. **Give placement rules for common file types.** "New API routes go in `src/routes/[resource].ts`." "New services go in `src/services/[name].service.ts`."
+4. **Give placement rules for common file types.** "New feature modules go in `src/features/[name]/`." "New shared helpers go in `src/shared/`."
 
 ## Example
 
@@ -34,30 +34,27 @@ Wrong file placement breaks imports, violates module boundaries, and creates an 
 ## Directory Structure
 
 src/
-  routes/       → Express route handlers (thin: validate input, call service, return response)
-  services/     → Business logic (may call repos, never call routes)
-  repos/        → Database queries (SQLAlchemy, no business logic)
-  models/       → ORM model definitions
-  schemas/      → Request/response validation schemas
-  middleware/   → Express middleware (auth, error handler, request logger)
-  utils/        → Pure utility functions (no side effects, no I/O)
+  features/     → Capability modules (each owns its local logic and boundaries)
+  core/         → Domain rules and shared business types
+  adapters/     → External integrations (DB, HTTP, queues, file I/O)
+  shared/       → Cross-cutting helpers (pure, framework-light)
   config/       → App configuration (loaded from env vars)
-
 tests/
-  unit/         → Mirrors src/ structure, mocked dependencies
-  integration/  → API-level tests with real DB
-  e2e/          → Playwright browser tests
+  unit/         → Fast isolated tests (no network or external I/O)
+  integration/  → Boundary tests (real adapters where needed)
+  e2e/          → Full workflow tests
+generated/      → Generated artifacts (read-only)
 
-Import rules:
-- routes → services → repos → models (one direction only)
-- utils can be imported by anything
-- Nothing imports from routes except the app entry point
-- middleware is registered in app.ts, not imported by routes directly
+Dependency rules:
+- features may depend on core + adapters + shared
+- core must not depend on adapters or framework code
+- shared must not import from features
+- generated code is never edited by hand
 
-Adding new modules:
-- New resource? Create route + service + repo + model + schema
-- New utility? Add to src/utils/ if pure, src/services/ if it has side effects
-- New middleware? Add to src/middleware/, register in app.ts
+Adding modules:
+- New capability? Add `src/features/[name]/`
+- New integration? Add `src/adapters/[system]/`
+- New reusable helper? Add to `src/shared/` only if reused across features
 ```
 
 ## Common Mistakes
@@ -66,7 +63,7 @@ Adding new modules:
 
 **Being too granular.** You don't need to document every subdirectory. Focus on the top 2 levels and the rules for creating new entries.
 
-**Not updating when structure changes.** If you refactored from `controllers/` to `routes/`, update the guideline. The model will follow whatever you wrote, even if the filesystem says otherwise.
+**Not updating when structure changes.** If you refactored from layer-based to feature-based folders (or vice versa), update the guideline. The model will follow whatever you wrote, even if the filesystem says otherwise.
 
 **Forgetting generated and ignored files.** If `dist/`, `node_modules/`, or `generated/` shouldn't be touched, say so. The model might try to edit generated code.
 

@@ -25,32 +25,27 @@ Copilot instructions work best as short, declarative statements. The model proce
 # Copilot Instructions
 
 ## Project
-Invoice processing API for freelancers. REST only.
-Core: Invoice, LineItem, Vendor, ExportJob.
-Not in scope: payments, tax calculation, multi-currency.
+[System scope, explicit out-of-scope boundaries]
 
 ## Stack
-Python 3.12, FastAPI, SQLAlchemy 2.0, PostgreSQL, Redis, Celery.
-Use pytest for tests, Ruff for linting, mypy for types.
+[Languages, frameworks, major dependencies, disallowed alternatives]
 
 ## Conventions
-- snake_case for all Python identifiers
-- Pydantic models for all request/response schemas
-- AppError for all error handling (code, message, status)
-- structlog for logging (JSON format, never log PII)
+- [Naming and formatting rules]
+- [Error handling and logging patterns]
+- [Dependency and module boundaries]
 
 ## Testing
-- Unit tests mock external dependencies
-- Integration tests use testcontainers for PostgreSQL
-- Factory functions in tests/factories/ for test data
-- All new public functions need tests
+- [Test levels and boundaries]
+- [Where tests live]
+- [Required checks before completion]
 
 ## Don't
-- Don't suggest Django, Flask, or Tortoise ORM
-- Don't add new dependencies
-- Don't generate database migration files
-- Don't hardcode credentials or API keys
+- [Protected files the model should not change]
+- [Changes that require explicit approval]
 ```
+
+Use this as a section scaffold. Keep content project-specific and prefer short rules over domain-heavy examples.
 
 ## Path-Specific Instructions
 
@@ -68,14 +63,14 @@ Path-specific files include a frontmatter-like header:
 
 ```markdown
 ---
-applyTo: src/routes/**/*.py
+applyTo: src/**/*
 ---
 
-# API Route Instructions
+# Path-Specific Instructions
 
-- Keep route handlers thin
-- Use Depends() for authentication
-- All endpoints return typed Pydantic responses
+- [Rules that apply only to this path pattern]
+- [Local constraints and conventions]
+- [Extra checks required for this area]
 ```
 
 ## Copilot-Specific Considerations

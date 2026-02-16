@@ -1,0 +1,223 @@
+# Central document version registry (append-only).
+# Add one entry per document update.
+entries:
+  - date: 2026-02-16
+    doc: 'docs/**'
+    version: '0.1.0'
+    release: 'docs-v0.1.0'
+    summary: 'Initial documentation baseline'
+  - date: 2026-02-16
+    doc: 'RELEASE_PROCESS.md'
+    version: '0.1.0'
+    release: 'unreleased'
+    summary: 'Add concise documentation release routine'
+  - date: 2026-02-16
+    doc: 'CHANGELOG.md'
+    version: '0.1.0'
+    release: 'unreleased'
+    summary: 'Initialize changelog with unreleased and baseline release sections'
+  - date: 2026-02-16
+    doc: 'docs/00-introduction/index.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/00-introduction/tool-landscape.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/00-introduction/what-makes-a-good-guideline.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/00-introduction/why-guidelines-matter.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/01-fundamentals/incremental-adoption.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/01-fundamentals/index.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/01-fundamentals/three-tier-model.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/01-fundamentals/token-budgets.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/02-must-have/api-contracts.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/02-must-have/coding-standards.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/02-must-have/directory-structure.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/02-must-have/index.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/02-must-have/llm-guardrails.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/02-must-have/project-scope.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/02-must-have/security-basics.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/02-must-have/tech-stack.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/02-must-have/testing-strategy.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/03-should-have/adrs.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/03-should-have/documentation-structure.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/03-should-have/error-handling.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/03-should-have/index.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/03-should-have/performance-expectations.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/03-should-have/review-guidelines.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/03-should-have/spec-templates.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/03-should-have/test-data-conventions.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/04-nice-to-have/architecture-tests.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/04-nice-to-have/ci-quality-gates.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/04-nice-to-have/domain-glossary.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/04-nice-to-have/index.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/04-nice-to-have/llm-evaluation-loop.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/04-nice-to-have/migration-rules.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/04-nice-to-have/security-playbook.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/05-tool-guides/agents-md.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/05-tool-guides/claude-code.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/05-tool-guides/cursor.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/05-tool-guides/github-copilot.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/05-tool-guides/hooks.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/05-tool-guides/index.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'docs/references.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'README.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'
+  - date: 2026-02-16
+    doc: 'CONTRIBUTING.md'
+    version: 'v1'
+    release: 'unreleased'
+    summary: 'Bulk increment for docs, README, CONTRIBUTING'

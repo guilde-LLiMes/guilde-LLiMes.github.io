@@ -78,7 +78,7 @@ Scope:
 
 ## Tool-Specific Notes
 
-- **Claude Code**: Essential for CLAUDE.md. Claude Code has file system access and can run commands — guardrails are the primary safety mechanism. Claude Code also supports hooks that can enforce guardrails programmatically.
+- **Claude Code**: Essential for CLAUDE.md. Claude Code has file system access and can run commands — guardrails are the primary safety mechanism. Claude Code also supports hooks that can enforce guardrails programmatically (see [Hooks Guide](../05-tool-guides/hooks.md)).
 - **Cursor**: Protected file rules can be set as `alwaysApply: true`. Verification steps can reference Cursor's built-in terminal.
 - **Copilot**: Less critical since Copilot doesn't execute code or create files autonomously. Still useful for scoping suggestions.
 - **AGENTS.md**: Critical for any autonomous agent. AGENTS.md was designed specifically for this use case — constraining agent behavior in a shared, standardized format.

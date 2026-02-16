@@ -87,6 +87,7 @@ Start with 3 must-haves. Add more as you see what the LLM gets wrong.
 ### Tool Guides
 - [Overview](docs/05-tool-guides/index.md) — cross-tool mental model
 - [Claude Code](docs/05-tool-guides/claude-code.md) — CLAUDE.md
+- [Hooks](docs/05-tool-guides/hooks.md) — runtime quality gates and safety automation
 - [Cursor](docs/05-tool-guides/cursor.md) — .cursor/rules/*.mdc
 - [GitHub Copilot](docs/05-tool-guides/github-copilot.md) — copilot-instructions.md
 - [AGENTS.md](docs/05-tool-guides/agents-md.md) — the emerging standard

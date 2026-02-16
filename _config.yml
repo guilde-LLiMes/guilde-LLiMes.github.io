@@ -1,6 +1,7 @@
 title: guide-LLiMes
 description: A framework for building LLM coding guidelines that actually work.
 url: https://guilde-llimes.github.io
+docs_version: 0.1.0
 
 remote_theme: just-the-docs/just-the-docs
 
@@ -24,6 +25,9 @@ exclude:
   - AGENTS.md
   - CLAUDE.md
   - input.md
+  - raw-input/
+  - CHANGELOG.md
+  - RELEASE_PROCESS.md
   - Gemfile
   - Gemfile.lock
   - node_modules/

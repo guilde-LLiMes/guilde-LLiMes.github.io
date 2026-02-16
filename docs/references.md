@@ -28,6 +28,25 @@ Use them as background reading. For tool behavior, always verify the latest offi
 
 - [Core Architecture Standards for pytest (CodingRules)](https://www.codingrules.ai/rules/core-architecture-standards-for-pytest)
 
-## Research Seed
+## Hooks and Workflow Automation
 
-- [Initial research notes (`input.md`)](../input.md)
+- [Claude Code: Automate workflows with hooks (official)](https://code.claude.com/docs/en/hooks-guide)
+- [Hooks in Claude Code (Eesel)](https://www.eesel.ai/blog/hooks-in-claude-code)
+- [Claude Code Hooks Mastery (YUV)](https://yuv.ai/blog/claude-code-hooks-mastery)
+- [codex-spec (npm package)](https://www.npmjs.com/package/codex-spec)
+- [Kiro for Codex (GitHub)](https://github.com/atman-33/kiro-for-codex)
+- [precommit-llm (GitHub)](https://github.com/dang-nh/precommit-llm)
+- [Prompting for LLM Code Generation (Potpie)](https://github.com/potpie-ai/potpie/wiki/How-to-write-good-prompts-for-generating-code-from-LLMs)
+- [Workflow Discussion: codex-spec (Reddit)](https://www.reddit.com/r/OpenaiCodex/comments/1nf7v9j/codexspec_specificationdriven_development_tool/)
+- [Weekly #53: LLM Workflows in 2026 (dev.to)](https://dev.to/weekly/weekly-53-2025-llm-workflows-code-bottlenecks-ai-adoption-in-2026-c26)
+
+## Community Case Studies (Use with Caution)
+
+- [Claude Code Hooks for Production Quality (PixelMojo)](https://www.pixelmojo.io/blogs/claude-code-hooks-production-quality-ci-cd-patterns)
+- [Claude Code Hooks Guide (Liquidmetal)](https://liquidmetal.ai/casesAndBlogs/claude-code-hooks-guide/)
+- [Claude Code Hooks Guide (Smartscope)](https://smartscope.blog/en/generative-ai/claude/claude-code-hooks-guide/)
+- [Constraining Claude with Hooks for Better Code (LinkedIn)](https://www.linkedin.com/posts/nickciubotariu_ai-claude-code-activity-7371607369665097729-JAk5)
+
+## Research Inputs
+
+Raw collection notes are intentionally kept out of the committed docs set. Keep all durable links in the sections above.

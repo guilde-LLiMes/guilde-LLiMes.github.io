@@ -53,6 +53,7 @@ Flaky tests:
 ## Tool-Specific Notes
 
 - **Claude Code**: List CI commands in CLAUDE.md so the model can run them locally before committing. `npm run typecheck && npm run lint && npm test` as a verification step.
+- **Hooks**: Use local hooks for fast, deterministic checks and keep CI as the final enforcement layer (see [Hooks Guide](../05-tool-guides/hooks.md)).
 - **All tools**: CI gates work alongside [LLM Guardrails](../02-must-have/llm-guardrails.md) — guardrails prevent mistakes proactively, CI catches what slips through.
 
 ## References

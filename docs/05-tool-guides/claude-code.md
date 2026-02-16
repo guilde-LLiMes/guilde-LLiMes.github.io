@@ -88,7 +88,7 @@ project/
 
 **Skills**: Claude Code supports custom skills — reusable command patterns stored in `.claude/skills/`. Use these for repetitive workflows like "write tests for this module" or "review this PR."
 
-**Hooks**: Shell commands that run automatically before or after tool calls. Useful for enforcing guardrails programmatically (e.g., run linter after every file edit).
+**Hooks**: Shell commands that run automatically before or after tool calls. Useful for enforcing guardrails programmatically (e.g., run linter after every file edit). See the [Hooks Guide](hooks.md).
 
 **File references**: Use `@filename` in CLAUDE.md to reference other documentation files (up to 5 levels deep).
 

@@ -30,9 +30,12 @@ The differences:
 | Loading | Always (root), auto (subdirs) | Always, auto (glob), or manual | Always | Closest file wins |
 | Multi-file | Yes (hierarchy) | Yes (rule per file) | Yes (instructions directory) | Yes (hierarchy) |
 
+For executable quality gates across tools, see [Hooks](hooks.md).
+
 ## Which Guide Do You Need?
 
 - **Using Claude Code?** → [Claude Code Guide](claude-code.md)
+- **Want runtime quality gates?** → [Hooks Guide](hooks.md)
 - **Using Cursor?** → [Cursor Guide](cursor.md)
 - **Using GitHub Copilot?** → [GitHub Copilot Guide](github-copilot.md)
 - **Want a tool-agnostic format?** → [AGENTS.md Guide](agents-md.md)

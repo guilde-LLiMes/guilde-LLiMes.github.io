@@ -1,0 +1,84 @@
+<div class="theme-switcher" aria-label="Theme switcher" role="group">
+  <button type="button" data-theme="light" aria-label="Use light theme">Light</button>
+  <button type="button" data-theme="dark" aria-label="Use dark theme">Dark</button>
+  <button type="button" data-theme="system" aria-label="Use system theme">System</button>
+</div>
+
+<style>
+  .theme-switcher {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .theme-switcher button {
+    font-size: 0.75rem;
+    padding: 0.22rem 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: var(--body-background-color);
+    color: var(--body-text-color);
+    cursor: pointer;
+    line-height: 1.2;
+  }
+
+  .theme-switcher button.active {
+    background: var(--link-color);
+    border-color: var(--link-color);
+    color: #fff;
+  }
+</style>
+
+<script>
+  (() => {
+    const KEY = "theme-preference";
+    const themes = ["light", "dark", "system"];
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const resolveTheme = (preference) => {
+      if (preference === "system") return media.matches ? "dark" : "light";
+      return preference === "dark" ? "dark" : "light";
+    };
+
+    const setActiveButton = (preference) => {
+      document.querySelectorAll(".theme-switcher [data-theme]").forEach((button) => {
+        const isActive = button.dataset.theme === preference;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    };
+
+    const applyTheme = (preference) => {
+      const resolved = resolveTheme(preference);
+      if (window.jtd && typeof window.jtd.setTheme === "function") {
+        window.jtd.setTheme(resolved);
+      }
+      setActiveButton(preference);
+    };
+
+    const getPreference = () => {
+      const stored = localStorage.getItem(KEY);
+      return themes.includes(stored) ? stored : "system";
+    };
+
+    const saveAndApply = (preference) => {
+      localStorage.setItem(KEY, preference);
+      applyTheme(preference);
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const initialPreference = getPreference();
+      applyTheme(initialPreference);
+
+      document.querySelectorAll(".theme-switcher [data-theme]").forEach((button) => {
+        button.addEventListener("click", () => saveAndApply(button.dataset.theme));
+      });
+    });
+
+    media.addEventListener("change", () => {
+      const preference = getPreference();
+      if (preference === "system") applyTheme("system");
+    });
+  })();
+</script>

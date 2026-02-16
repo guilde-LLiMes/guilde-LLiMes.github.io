@@ -10,3 +10,5 @@ Gemfile.lock
 dev/
 raw-input/*
 !raw-input/AGENTS.md
+feedback*/
+**/draft*/

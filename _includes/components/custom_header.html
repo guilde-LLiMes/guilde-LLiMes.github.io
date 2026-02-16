@@ -1,5 +1,6 @@
 <div id="theme-switcher-root" class="theme-switcher">
   <button id="theme-cycle-button" type="button" aria-live="polite" aria-label="Cycle theme">🖥 System</button>
+  <div class="theme-switcher-version" aria-label="Documentation version">v{{ site.docs_version | default: "0.1.0" }}</div>
 </div>
 
 <style>
@@ -44,8 +45,10 @@
   }
 
   .theme-switcher {
-    display: flex;
-    align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
   }
 
   .theme-switcher button {
@@ -64,6 +67,15 @@
     border-color: var(--link-color);
     color: var(--link-color);
     background: var(--accent-color-soft);
+  }
+
+  .theme-switcher-version {
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    color: var(--body-text-color);
+    opacity: 0.75;
   }
 
   .site-title {

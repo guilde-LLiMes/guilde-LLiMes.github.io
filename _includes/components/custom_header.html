@@ -3,6 +3,32 @@
 </div>
 
 <style>
+  :root {
+    --accent-color: #adca67;
+    --accent-color-strong: #95b64d;
+    --link-color: var(--accent-color);
+    --btn-primary-color: var(--accent-color);
+  }
+
+  a:not(.nav-list-link):not(.site-title):not(.search-result) {
+    color: var(--accent-color);
+  }
+
+  a:not(.nav-list-link):not(.site-title):not(.search-result):hover {
+    color: var(--accent-color-strong);
+  }
+
+  .site-button {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+
+  .site-button:hover {
+    color: #ffffff;
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+
   .aux-nav .aux-nav-list {
     display: flex;
     align-items: center;

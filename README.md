@@ -5,7 +5,7 @@ nav_order: 1
 permalink: /
 ---
 
-# guide-LLiMes
+# <span class="home-brand-title"><span class="home-brand-logos" aria-hidden="true"><img src="/assets/img/logo-inline-56-light.png" alt="" class="theme-logo theme-logo-light" /><img src="/assets/img/logo-inline-56-dark.png" alt="" class="theme-logo theme-logo-dark" /></span><span>guide-<span class="logo-accent">L</span><span class="logo-accent">L</span>i<span class="logo-accent">M</span>es</span></span>
 
 **A framework for building LLM coding guidelines that actually work.**
 

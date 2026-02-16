@@ -76,6 +76,41 @@
     color: var(--accent-color);
     font-weight: 700;
   }
+
+  .home-brand-title .logo-accent {
+    color: var(--accent-color);
+    font-weight: 700;
+  }
+
+  .home-brand-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: "Courier New", Courier, "Nimbus Mono L", "Liberation Mono", monospace;
+    letter-spacing: 0.01em;
+    font-weight: 700;
+  }
+
+  .home-brand-logos {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .site-title .home-brand-logos {
+    padding-right: 0.2rem;
+  }
+
+  .theme-logo {
+    display: none;
+    width: 1.1em;
+    height: 1.1em;
+    object-fit: contain;
+    vertical-align: -0.08em;
+  }
+
+  .theme-logo.is-active {
+    display: inline-block;
+  }
 </style>
 
 <script>
@@ -97,6 +132,15 @@
 
     const formatLabel = (preference) =>
       icons[preference] + " " + preference.charAt(0).toUpperCase() + preference.slice(1);
+
+    const syncThemeLogos = (resolvedTheme) => {
+      const lightLogos = document.querySelectorAll(".theme-logo-light");
+      const darkLogos = document.querySelectorAll(".theme-logo-dark");
+      const useDarkTheme = resolvedTheme === "dark";
+
+      lightLogos.forEach((logo) => logo.classList.toggle("is-active", useDarkTheme));
+      darkLogos.forEach((logo) => logo.classList.toggle("is-active", !useDarkTheme));
+    };
 
     const getPreference = () => {
       const stored = localStorage.getItem(KEY);
@@ -127,8 +171,14 @@
         })
         .join("");
 
+      const logoMarkup =
+        '<span class="home-brand-logos" aria-hidden="true">' +
+        '<img src="/assets/img/logo-inline-56-light.png" alt="" class="theme-logo theme-logo-light" />' +
+        '<img src="/assets/img/logo-inline-56-dark.png" alt="" class="theme-logo theme-logo-dark" />' +
+        "</span>";
+
       title.setAttribute("aria-label", original);
-      title.innerHTML = html;
+      title.innerHTML = logoMarkup + html;
       title.dataset.logoStyled = "true";
     };
 
@@ -137,6 +187,7 @@
       if (window.jtd && typeof window.jtd.setTheme === "function") {
         window.jtd.setTheme(resolved);
       }
+      syncThemeLogos(resolved);
 
       const button = document.getElementById("theme-cycle-button");
       if (button) {

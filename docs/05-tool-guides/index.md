@@ -36,6 +36,9 @@ For executable quality gates across tools, see [Hooks](hooks.md).
 
 - **Using Claude Code?** → [Claude Code Guide](claude-code.md)
 - **Want runtime quality gates?** → [Hooks Guide](hooks.md)
+- **Want reusable workflows instead of repeated prompts?** → [Skills Guide](skills.md)
+- **Working on bigger tasks and need delegation?** → [Sub-Agents Guide](sub-agents.md)
+- **Need specialist agents collaborating as a system?** → [Agent Teams Guide](agent-teams.md)
 - **Using Cursor?** → [Cursor Guide](cursor.md)
 - **Using GitHub Copilot?** → [GitHub Copilot Guide](github-copilot.md)
 - **Want a tool-agnostic format?** → [AGENTS.md Guide](agents-md.md)

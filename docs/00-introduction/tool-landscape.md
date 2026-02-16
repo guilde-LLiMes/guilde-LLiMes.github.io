@@ -32,6 +32,13 @@ What varies is the file location, format details, and how much control you have 
 - **Key feature**: Hierarchical — subdirectory CLAUDE.md files add context for that part of the codebase
 - **Limit**: ~150-200 effective instructions before reliability drops
 
+Claude Code also has strong workflow primitives:
+
+- **[Hooks](../05-tool-guides/hooks.md)** for runtime quality enforcement
+- **[Skills](../05-tool-guides/skills.md)** for reusable task playbooks
+- **[Sub-agents](../05-tool-guides/sub-agents.md)** for delegated specialist execution
+- **[Agent teams](../05-tool-guides/agent-teams.md)** for teammate-style multi-agent collaboration
+
 ```
 my-project/
 ├── CLAUDE.md              # Project-wide guidelines

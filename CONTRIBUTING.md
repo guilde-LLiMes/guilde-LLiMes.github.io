@@ -68,6 +68,31 @@ PR checklist:
 - No duplicated rules when automation/checks already enforce behavior
 - References and internal links are valid
 
+## Default Writing Pattern
+
+For feature/tool sections, prefer this order:
+
+1. **Problem**: what pain or failure pattern the reader has now
+2. **Value**: what improves if they apply this guidance
+3. **When to use**: decision cues and concrete scenarios
+
+This structure keeps content user-outcome driven instead of feature-list driven.
+
+Reusable mini-template:
+
+```markdown
+## Why this matters
+[problem]
+
+## What value it gives
+[outcome]
+
+## When to use it
+- [scenario 1]
+- [scenario 2]
+- [scenario 3]
+```
+
 ## Review Criteria
 
 Reviewers prioritize:
@@ -97,4 +122,3 @@ Open the local URL shown by Jekyll and verify navigation, links, and page readab
 - Assume good intent and review the idea, not the person
 - Prefer incremental improvements over broad speculative rewrites
 - Keep discussion anchored to improving output quality in real projects
-

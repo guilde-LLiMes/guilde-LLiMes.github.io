@@ -31,6 +31,10 @@ Use them as background reading. For tool behavior, always verify the latest offi
 ## Hooks and Workflow Automation
 
 - [Claude Code: Automate workflows with hooks (official)](https://code.claude.com/docs/en/hooks-guide)
+- [Claude Code: Hooks reference (official)](https://code.claude.com/docs/en/hooks)
+- [Claude Code: Sub-agents (official)](https://code.claude.com/docs/en/sub-agents)
+- [Claude Code: Agent teams (official)](https://code.claude.com/docs/en/agent-teams)
+- [Claude Code: Skills (official)](https://code.claude.com/docs/en/skills)
 - [Hooks in Claude Code (Eesel)](https://www.eesel.ai/blog/hooks-in-claude-code)
 - [Claude Code Hooks Mastery (YUV)](https://yuv.ai/blog/claude-code-hooks-mastery)
 - [codex-spec (npm package)](https://www.npmjs.com/package/codex-spec)
@@ -46,6 +50,18 @@ Use them as background reading. For tool behavior, always verify the latest offi
 - [Claude Code Hooks Guide (Liquidmetal)](https://liquidmetal.ai/casesAndBlogs/claude-code-hooks-guide/)
 - [Claude Code Hooks Guide (Smartscope)](https://smartscope.blog/en/generative-ai/claude/claude-code-hooks-guide/)
 - [Constraining Claude with Hooks for Better Code (LinkedIn)](https://www.linkedin.com/posts/nickciubotariu_ai-claude-code-activity-7371607369665097729-JAk5)
+
+## Skills and Skill Ecosystem
+
+- [Official Skills (Anthropic)](https://github.com/anthropics/skills)
+- [Skills Docs (skillsmp)](https://skillsmp.com/en/docs)
+- [Skill search (skillsmp)](https://skillsmp.com/)
+- [Codex Skills Docs](https://github.com/openai/codex/blob/main/docs/skills.md)
+- [Agent Skills Spec](https://agentskills.io/)
+
+## Multi-Agent and Delegation
+
+- [OpenCode: Agents guide (official)](https://opencode.ai/docs/agents)
 
 ## Research Inputs
 

@@ -21,3 +21,11 @@ guide-LLiMes is a framework for building LLM coding guidelines that improve outp
 - Start with 3 must-have guidelines.
 - Expand incrementally as repeat failure patterns appear.
 - Add should-have and nice-to-have guidance when the pain justifies the extra context cost.
+
+## Authoring Pattern (Default)
+
+For tool or feature documentation, structure content in this order:
+
+1. Problem: current user pain or failure pattern.
+2. Value: what improves after applying the guidance.
+3. When to use: concrete decision cues and scenarios.

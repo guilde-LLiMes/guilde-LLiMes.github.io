@@ -86,9 +86,13 @@ project/
 
 ## Key Features
 
-**Skills**: Claude Code supports custom skills — reusable command patterns stored in `.claude/skills/`. Use these for repetitive workflows like "write tests for this module" or "review this PR."
+**Skills**: Capture repeatable workflows once and reuse them across tasks. This reduces prompt repetition and increases consistency. See the [Skills Guide](skills.md).
 
-**Hooks**: Shell commands that run automatically before or after tool calls. Useful for enforcing guardrails programmatically (e.g., run linter after every file edit). See the [Hooks Guide](hooks.md).
+**Hooks**: Enforce deterministic checks around editing and execution. This closes the gap between instructions and actual runtime behavior. See the [Hooks Guide](hooks.md).
+
+**Sub-agents**: Delegate larger work units to specialized agents while keeping the main chat focused on coordination and decisions. See the [Sub-Agents Guide](sub-agents.md).
+
+**Agent teams**: Define teammate-style specialist collaboration for complex, multi-role tasks. See the [Agent Teams Guide](agent-teams.md).
 
 **File references**: Use `@filename` in CLAUDE.md to reference other documentation files (up to 5 levels deep).
 

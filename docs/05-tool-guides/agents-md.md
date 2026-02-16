@@ -1,7 +1,7 @@
 ---
 layout: default
 title: AGENTS.md
-nav_order: 5
+nav_order: 8
 parent: Tool Guides
 ---
 

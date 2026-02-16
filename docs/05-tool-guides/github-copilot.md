@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GitHub Copilot
-nav_order: 4
+nav_order: 7
 parent: Tool Guides
 ---
 

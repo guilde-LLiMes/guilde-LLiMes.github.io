@@ -66,3 +66,7 @@ Prompt patterns:
 
 - **Claude Code**: CLAUDE.md supports iterative refinement — use `/init` to regenerate periodically and compare with your manual version.
 - **All tools**: This is a process guideline, not a tool configuration. It works the same regardless of which LLM tool you use.
+
+## References
+
+- [External References](../references.md)

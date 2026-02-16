@@ -82,3 +82,7 @@ Scope:
 - **Cursor**: Protected file rules can be set as `alwaysApply: true`. Verification steps can reference Cursor's built-in terminal.
 - **Copilot**: Less critical since Copilot doesn't execute code or create files autonomously. Still useful for scoping suggestions.
 - **AGENTS.md**: Critical for any autonomous agent. AGENTS.md was designed specifically for this use case — constraining agent behavior in a shared, standardized format.
+
+## References
+
+- [External References](../references.md)

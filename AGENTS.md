@@ -1,24 +1,23 @@
-# guide-LLiMes
+# guide-LLiMes Core Principles
 
-Framework for building LLM coding guidelines. Markdown docs site (Jekyll + Just the Docs).
+guide-LLiMes is a framework for building LLM coding guidelines that improve output quality through clear project context.
 
-## Structure
-docs/00-introduction/  → Concepts: why guidelines matter, good guideline properties, tool landscape
-docs/01-fundamentals/  → Framework: three-tier model, token budgets, incremental adoption
-docs/02-must-have/     → 8 critical guidelines (scope, stack, standards, testing, structure, APIs, security, guardrails)
-docs/03-should-have/   → 7 consistency guidelines
-docs/04-nice-to-have/  → 6 scale/compliance guidelines
-docs/05-tool-guides/   → Tool-specific: Claude Code, Cursor, Copilot, AGENTS.md
+## Core Principles
 
-## Conventions
-- Tone: direct, imperative, no filler
-- Guideline page template: Why → What → How → Example → Mistakes → Tool Notes
-- Examples: short (10-20 lines), realistic projects, no foo/bar
-- All .md files need Jekyll frontmatter (layout, title, nav_order, parent)
-- Content teaches WHY and HOW, not prescriptive rules
-- Tool-agnostic core, tool-specific appendices
+- Method first, constraints explicit: teach why and how, then state non-negotiable boundaries clearly.
+- Context over prompting tricks: give the model stable project facts (scope, stack, structure, constraints).
+- Prioritize by impact: use Must / Should / Nice tiers instead of aiming for completeness.
+- Tool-agnostic core, tool-specific edges: keep principles shared and adapt only file format and loading behavior.
+- Write for model execution: dense, imperative, scannable, unambiguous, and scoped with DO / DON'T guidance.
+- Budget-aware guidance: maximize signal density, remove redundancy, and keep only high-value instructions.
+- Safety as first-class: define rules for security, API compatibility, migrations, and protected files.
+- Pair guidance with verification: map important rules to tests, lint, type checks, or CI gates.
+- Iterate from real failures: add or refine guidance based on observed mistakes, not hypothetical ones.
+- Keep guidelines current: review monthly, prune stale rules, and keep instructions aligned with current architecture.
+- Do not duplicate tooling: if automation enforces a rule, reference the check instead of restating it.
 
-## Don't
-- Don't modify _config.yml theme or LICENSE.md
-- Don't add build tooling (pure Jekyll, no plugins beyond github-pages gem)
-- Don't create boilerplate templates (framework teaches method, not copy-paste)
+## Rollout Guidance
+
+- Start with 3 must-have guidelines.
+- Expand incrementally as repeat failure patterns appear.
+- Add should-have and nice-to-have guidance when the pain justifies the extra context cost.

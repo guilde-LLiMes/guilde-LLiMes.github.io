@@ -65,3 +65,7 @@ Rules:
 - **Claude Code**: Include in CLAUDE.md so generated tests use your factory pattern. Point to the factory directory.
 - **Cursor**: Scope to test directories with glob patterns.
 - **All tools**: This guideline pays off most when the model writes many tests — it prevents test data sprawl.
+
+## References
+
+- [External References](../references.md)

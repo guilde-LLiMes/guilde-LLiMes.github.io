@@ -33,3 +33,7 @@ Pick based on where you see the most friction:
 - **Reviews take too long** → Review Guidelines
 - **Error handling is inconsistent** → Error Handling
 - **Tests are flaky or interdependent** → Test Data Conventions
+
+## References
+
+- [External References](../references.md)

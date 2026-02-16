@@ -46,3 +46,7 @@ The investment is modest. A solid set of must-have guidelines takes an afternoon
 ---
 
 Next: [What Makes a Good Guideline](what-makes-a-good-guideline.md) — the properties that separate useful guidelines from noise.
+
+## References
+
+- [External References](../references.md)

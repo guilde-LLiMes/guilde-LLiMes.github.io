@@ -60,3 +60,7 @@ Compliance (SOC 2):
 
 - **Claude Code**: Reference in CLAUDE.md for projects with compliance requirements. The model should know the data classification and escalation triggers.
 - **All tools**: This guideline is most impactful in regulated domains. Startups building a todo app don't need a security playbook.
+
+## References
+
+- [External References](../references.md)

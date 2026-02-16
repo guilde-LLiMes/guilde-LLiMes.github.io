@@ -140,3 +140,7 @@ alwaysApply: false
 **Overlapping globs.** Two rules matching the same files can cause conflicting instructions. Keep glob patterns distinct.
 
 **Not migrating from .cursorrules.** The old single-file format is deprecated. Split it into modular .mdc files.
+
+## References
+
+- [External References](../references.md)

@@ -75,3 +75,7 @@ Rules:
 - **Cursor**: Consider glob-scoping API rules to `src/routes/**` or `src/api/**` so they only load when relevant.
 - **Copilot**: Include breaking change definitions — Copilot suggests inline changes and needs to know what's safe.
 - **AGENTS.md**: Include in root file. Agents that make changes across files need clear API boundary rules.
+
+## References
+
+- [External References](../references.md)

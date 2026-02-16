@@ -50,3 +50,7 @@ Part of CI: yes (blocking)
 
 - **Claude Code**: Include the validation command in CLAUDE.md guardrails — run after generating code.
 - **All tools**: This guideline is more about project infrastructure than LLM configuration. The model benefits by knowing the rules exist and that violations will be caught.
+
+## References
+
+- [External References](../references.md)

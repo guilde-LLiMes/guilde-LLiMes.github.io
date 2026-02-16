@@ -77,3 +77,7 @@ Constraints:
 - **AGENTS.md**: First section of the root-level file
 
 Scope should be in whatever file loads first and always. It sets the foundation for everything else.
+
+## References
+
+- [External References](../references.md)

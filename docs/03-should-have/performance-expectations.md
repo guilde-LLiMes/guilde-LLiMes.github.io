@@ -62,3 +62,7 @@ Anti-patterns:
 - **Claude Code**: Include in CLAUDE.md when performance is a concern. Claude Code can run benchmarks and profilers if told how.
 - **Cursor**: Scope to data access and API layers where performance matters most.
 - **All tools**: Performance guidelines are most valuable for backend and data-heavy projects. Frontend and CLI tools may not need this.
+
+## References
+
+- [External References](../references.md)

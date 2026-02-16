@@ -31,3 +31,7 @@ You need these when:
 - Model-generated code passes review but slowly breaks architecture → [architecture tests](architecture-tests.md)
 - New team members (or new LLM sessions) use different terms for the same thing → [domain glossary](domain-glossary.md)
 - A production incident traces back to a schema migration → [migration rules](migration-rules.md)
+
+## References
+
+- [External References](../references.md)

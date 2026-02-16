@@ -116,3 +116,7 @@ Shorter guidelines that cover the right things beat comprehensive guidelines tha
 ---
 
 Next: [Incremental Adoption](incremental-adoption.md) — how to build up guidelines over time without writing everything at once.
+
+## References
+
+- [External References](../references.md)

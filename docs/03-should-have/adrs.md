@@ -71,3 +71,7 @@ Consequence: Two data access patterns coexist. Document which to use where.
 - **Cursor**: Lightweight ADR summaries in a dedicated rule file. Full ADRs can be in `docs/` for reference.
 - **Copilot**: Summarize key decisions in `copilot-instructions.md`. Copilot can't browse files, so the context must be in the instructions.
 - **AGENTS.md**: Include decision summaries in the root file. Agents benefit from understanding architectural constraints.
+
+## References
+
+- [External References](../references.md)

@@ -139,3 +139,7 @@ Ask before: schema changes, new dependencies, auth changes.
 **Instructions contradict each other.** Root says "use Prisma," subdirectory says "use raw SQL." Claude follows whichever it reads last.
 
 **Stale after refactoring.** If you renamed directories or changed frameworks, update CLAUDE.md or the model follows outdated instructions.
+
+## References
+
+- [External References](../references.md)

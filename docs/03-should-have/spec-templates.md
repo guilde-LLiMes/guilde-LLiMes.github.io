@@ -63,3 +63,7 @@ What this change intentionally does NOT include.
 - **Claude Code**: Can be stored as a Claude Code skill or referenced in CLAUDE.md. Useful as a prompt pattern the model recognizes.
 - **Cursor**: Can be a `.mdc` rule that's manually referenced (not `alwaysApply`), loaded when writing specs.
 - **All tools**: This guideline is more about human workflow than tool configuration. It standardizes the inputs you give to the model.
+
+## References
+
+- [External References](../references.md)

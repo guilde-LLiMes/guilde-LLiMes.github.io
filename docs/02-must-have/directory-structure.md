@@ -76,3 +76,7 @@ Adding new modules:
 - **Cursor**: Can scope rules to directories with glob patterns. A rule scoped to `src/routes/**` can have route-specific guidelines without cluttering the global rules.
 - **Copilot**: Include in instructions. Copilot generates code inline so file placement is mostly handled by the user, but import rules still help.
 - **AGENTS.md**: Subdirectory AGENTS.md files can provide directory-specific context (closest file wins).
+
+## References
+
+- [External References](../references.md)

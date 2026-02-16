@@ -110,3 +110,7 @@ applyTo: src/routes/**/*.py
 **Instructions too explanatory.** "Because we value code quality, we prefer..." — skip the motivation. Just state the rule.
 
 **Not testing the effect.** After adding instructions, try generating code and check if Copilot follows them. Adjust if not.
+
+## References
+
+- [External References](../references.md)

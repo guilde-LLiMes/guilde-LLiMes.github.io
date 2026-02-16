@@ -98,3 +98,7 @@ Focus on writing good guidelines first. Formatting them for specific tools is a 
 ---
 
 Next: [Three-Tier Model](../01-fundamentals/three-tier-model.md) — how to prioritize which guidelines to write first.
+
+## References
+
+- [External References](../references.md)

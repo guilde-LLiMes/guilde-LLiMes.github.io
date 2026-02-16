@@ -48,3 +48,7 @@ If your team uses more than one tool:
 4. **Keep content in sync** — update the source, then update the format-specific files
 
 The overhead of maintaining 2-3 format variants is small. The content — which is 90% of the work — is shared.
+
+## References
+
+- [External References](../references.md)

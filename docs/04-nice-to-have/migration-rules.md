@@ -55,3 +55,7 @@ LLM-specific:
 
 - **Claude Code**: Include in CLAUDE.md [LLM Guardrails](../02-must-have/llm-guardrails.md) — migration files should be on the protected list.
 - **All tools**: This guideline works alongside guardrails. The guardrails say "don't touch migrations." This guideline explains the correct process.
+
+## References
+
+- [External References](../references.md)

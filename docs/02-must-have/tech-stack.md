@@ -74,3 +74,7 @@ Do NOT use:
 - **Cursor**: Can be `alwaysApply: true` or scoped — if you have multiple languages in a monorepo, scope stack info to the relevant directories
 - **Copilot**: Include in `copilot-instructions.md`. Copilot is especially prone to suggesting popular alternatives.
 - **AGENTS.md**: Core content in root file. Subdirectory files can override for sub-projects with different stacks.
+
+## References
+
+- [External References](../references.md)

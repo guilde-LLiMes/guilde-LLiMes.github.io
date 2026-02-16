@@ -103,3 +103,7 @@ A monthly review of 10-15 minutes keeps guidelines sharp.
 ---
 
 You now have the conceptual foundation. Next: [Must-Have Guidelines](../02-must-have/index.md) — the non-negotiables, explained one by one.
+
+## References
+
+- [External References](../references.md)

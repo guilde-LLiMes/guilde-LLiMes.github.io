@@ -107,3 +107,7 @@ That said, guidelines should still be readable by humans — your team will revi
 ---
 
 Next: [Tool Landscape](tool-landscape.md) — how different LLM coding tools consume guidelines.
+
+## References
+
+- [External References](../references.md)

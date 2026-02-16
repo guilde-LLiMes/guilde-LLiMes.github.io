@@ -140,3 +140,7 @@ Ask before: schema changes, new dependencies, auth modifications.
 **Not testing across tools.** An AGENTS.md that works well in Cursor might be structured differently than what Claude Code prefers. Test with your primary tools.
 
 **Too long.** The same token budget principles apply. Keep it dense and scannable.
+
+## References
+
+- [External References](../references.md)

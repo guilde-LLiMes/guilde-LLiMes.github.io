@@ -54,3 +54,7 @@ Flaky tests:
 
 - **Claude Code**: List CI commands in CLAUDE.md so the model can run them locally before committing. `npm run typecheck && npm run lint && npm test` as a verification step.
 - **All tools**: CI gates work alongside [LLM Guardrails](../02-must-have/llm-guardrails.md) — guardrails prevent mistakes proactively, CI catches what slips through.
+
+## References
+
+- [External References](../references.md)

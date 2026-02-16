@@ -76,3 +76,7 @@ Imports:
 - **Cursor**: Good candidate for `alwaysApply: true` rule. Can also create language-specific rules with glob patterns (e.g., `*.py` vs `*.ts`).
 - **Copilot**: Include in instructions. Copilot is particularly sensitive to naming conventions.
 - **AGENTS.md**: Root-level file. Short and dense — the model references this frequently.
+
+## References
+
+- [External References](../references.md)

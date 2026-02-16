@@ -62,3 +62,7 @@ Merge requires:
 - **Claude Code**: Include in CLAUDE.md so the model generates code that anticipates review criteria. Claude Code can also be used to generate PR descriptions.
 - **Cursor**: Less relevant as a rule file. More useful as team process documentation.
 - **All tools**: This guideline primarily helps the team, but including it in the model's context means generated code better matches expectations.
+
+## References
+
+- [External References](../references.md)

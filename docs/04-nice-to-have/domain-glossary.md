@@ -56,3 +56,7 @@ Invariants:
 - **Claude Code**: Include key glossary terms in CLAUDE.md. Full glossary can be in a separate file the model reads on demand.
 - **Cursor**: Good candidate for an `alwaysApply: true` rule if domain consistency is a frequent problem.
 - **All tools**: Most impactful for domain-rich applications (healthcare, finance, e-commerce) where terminology is precise and consequential.
+
+## References
+
+- [External References](../references.md)

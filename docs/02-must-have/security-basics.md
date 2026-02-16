@@ -76,3 +76,7 @@ Constraints:
 - **Cursor**: Consider a dedicated security rule with `alwaysApply: true`. Security rules should never be conditional.
 - **Copilot**: Include logging boundaries. Copilot's inline suggestions are the most likely to accidentally include sensitive data in log statements.
 - **AGENTS.md**: Root-level, always loaded. Agents that operate autonomously need the strongest security boundaries.
+
+## References
+
+- [External References](../references.md)

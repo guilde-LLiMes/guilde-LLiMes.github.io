@@ -64,3 +64,7 @@ Rules:
 - **Claude Code**: Include in CLAUDE.md. Point to the actual error class file so Claude can reference it.
 - **Cursor**: Can scope to `src/services/**` and `src/routes/**` where error handling matters most.
 - **All tools**: Error handling is one of the most impactful should-haves. Models default to inconsistent patterns without guidance.
+
+## References
+
+- [External References](../references.md)

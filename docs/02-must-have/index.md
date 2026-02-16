@@ -44,3 +44,7 @@ If you're not sure which to start with, use this decision tree:
 - **You're building a frontend/fullstack app**: Project Scope + Tech Stack + Directory Structure
 - **You're working on an established codebase**: Coding Standards + Testing Strategy + LLM Guardrails
 - **You're in a regulated domain**: Project Scope + Security Basics + LLM Guardrails
+
+## References
+
+- [External References](../references.md)

@@ -31,3 +31,7 @@ Key terms used throughout guide-LLiMes.
 **Three-tier model** — guide-LLiMes' framework for prioritizing guidelines: must-have (prevent breakage), should-have (reduce variance), nice-to-have (scale and compliance). See [Three-Tier Model](docs/01-fundamentals/three-tier-model.md).
 
 **Ubiquitous language** — A shared vocabulary where every concept has exactly one name, used consistently in code, documentation, and conversation. From Domain-Driven Design. See [Domain Glossary](docs/04-nice-to-have/domain-glossary.md).
+
+## References
+
+- [External References](docs/references.md)

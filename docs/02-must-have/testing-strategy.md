@@ -75,3 +75,7 @@ Rules:
 - **Cursor**: Can scope testing rules to test directories with glob patterns. Consider separate rules for unit vs integration contexts.
 - **Copilot**: Include test patterns in instructions. Copilot generates tests inline, so clear file conventions prevent misplacement.
 - **AGENTS.md**: Include test commands and conventions. Agents that can execute tests benefit most from this guideline.
+
+## References
+
+- [External References](../references.md)

@@ -61,3 +61,7 @@ Module docs:
 - **Claude Code**: Include in CLAUDE.md. Claude Code frequently creates and edits files — it needs to know where docs belong.
 - **Cursor**: Less critical as a rule since documentation changes are less frequent than code changes.
 - **All tools**: This guideline primarily prevents the model from creating docs in unexpected locations.
+
+## References
+
+- [External References](../references.md)

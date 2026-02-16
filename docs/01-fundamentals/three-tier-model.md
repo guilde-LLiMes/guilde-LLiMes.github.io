@@ -79,3 +79,7 @@ Use the tiers as a framework for thinking about priority, not as universal truth
 ---
 
 Next: [Token Budgets](token-budgets.md) — why your guidelines can't be infinitely long.
+
+## References
+
+- [External References](../references.md)

@@ -7,3 +7,4 @@ vendor/
 Gemfile.lock
 .DS_Store
 .claude/settings.local.json
+dev/

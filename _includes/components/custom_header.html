@@ -4,8 +4,9 @@
 
 <style>
   :root {
-    --accent-color: #adca67;
-    --accent-color-strong: #95b64d;
+    --accent-color: #a2bf58;
+    --accent-color-strong: #8fab45;
+    --accent-color-soft: #c9dc98;
     --link-color: var(--accent-color);
     --btn-primary-color: var(--accent-color);
   }
@@ -26,8 +27,8 @@
   }
 
   .site-button:hover {
-    color: #ffffff;
-    background: var(--accent-color);
+    color: #2f3b1a;
+    background: var(--accent-color-soft);
     border-color: var(--accent-color);
   }
 
@@ -62,15 +63,17 @@
   .theme-switcher button:hover {
     border-color: var(--link-color);
     color: var(--link-color);
+    background: var(--accent-color-soft);
   }
 
   .site-title {
     font-family: "Courier New", Courier, "Nimbus Mono L", "Liberation Mono", monospace;
     letter-spacing: 0.01em;
+    font-weight: 700;
   }
 
   .site-title .logo-accent {
-    color: #adca67;
+    color: var(--accent-color);
     font-weight: 700;
   }
 </style>

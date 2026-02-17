@@ -21,9 +21,16 @@ back_to_top_text: "Back to top"
 
 footer_content: "guide-LLiMes &mdash; Build LLM coding guidelines that work."
 
+source_links:
+  github_web_base: https://github.com
+  github_raw_base: https://raw.githubusercontent.com
+  branch: main
+
 exclude:
   - AGENTS.md
   - CLAUDE.md
+  - SKILL.md
+  - SKILL-VALIDATION-CHECKLIST.md
   - input.md
   - raw-input/
   - CHANGELOG.md

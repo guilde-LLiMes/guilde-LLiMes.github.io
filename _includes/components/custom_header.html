@@ -1,6 +1,48 @@
+{% assign github_aux_url = site.aux_links.GitHub | first %}
+{% assign github_repo_url = site.github.repository_url | default: github_aux_url %}
+{% assign github_repo_nwo = site.github.repository_nwo | default: github_repo_url | replace: "https://github.com/", "" %}
+{% assign github_web_base = site.source_links.github_web_base | default: "https://github.com" %}
+{% assign github_raw_base_url = site.source_links.github_raw_base | default: "https://raw.githubusercontent.com" %}
+{% assign github_branch = site.source_links.branch | default: site.github.source.branch | default: "main" %}
+{% assign github_raw_base = github_raw_base_url | append: "/" | append: github_repo_nwo | append: "/refs/heads/" | append: github_branch | append: "/" %}
+{% assign github_blob_base = github_web_base | append: "/" | append: github_repo_nwo | append: "/blob/" | append: github_branch | append: "/" %}
+
 <div id="theme-switcher-root" class="theme-switcher">
   <button id="theme-cycle-button" type="button" aria-live="polite" aria-label="Cycle theme">🖥 System</button>
   <div class="theme-switcher-version" aria-label="Documentation version">v{{ site.docs_version | default: "0.1.0" }}</div>
+</div>
+
+<div
+  id="markdown-actions-root"
+  class="markdown-actions"
+  data-page-path="{{ page.path | escape }}"
+  data-raw-base="{{ github_raw_base | escape }}"
+  data-blob-base="{{ github_blob_base | escape }}"
+  hidden
+>
+  <div class="markdown-actions-group">
+    <button id="markdown-copy-button" type="button" class="markdown-actions-main" aria-describedby="markdown-action-status">
+      Markdown
+    </button>
+    <button
+      id="markdown-menu-button"
+      type="button"
+      class="markdown-actions-toggle"
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-controls="markdown-menu"
+      aria-label="Open markdown actions"
+    >
+      ▾
+    </button>
+  </div>
+  <ul id="markdown-menu" class="markdown-menu" role="menu" hidden>
+    <li role="none"><button id="markdown-menu-copy" type="button" role="menuitem">Copy Markdown</button></li>
+    <li role="none"><button id="markdown-menu-raw" type="button" role="menuitem">Open Raw Markdown</button></li>
+    <li role="none"><button id="markdown-menu-github" type="button" role="menuitem">Open on GitHub</button></li>
+  </ul>
+  <div id="markdown-action-status" class="markdown-action-status" aria-live="polite"></div>
+  <script id="markdown-source-json" type="application/json">{{ page.content | jsonify }}</script>
 </div>
 
 <style>
@@ -123,6 +165,138 @@
   .theme-logo.is-active {
     display: inline-block;
   }
+
+  .markdown-actions {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    position: relative;
+  }
+
+  .breadcrumb-nav.has-markdown-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+    position: relative;
+    z-index: 5;
+  }
+
+  .breadcrumb-nav.has-markdown-actions .breadcrumb-nav-list {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-bottom: 0.75rem;
+    padding-right: 0.5rem;
+  }
+
+  .breadcrumb-nav.has-markdown-actions .markdown-actions {
+    flex: 0 0 auto;
+    margin-left: auto;
+    z-index: 30;
+  }
+
+  .markdown-actions-group {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .markdown-actions button {
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--body-text-color);
+    cursor: pointer;
+    line-height: 1.2;
+  }
+
+  .markdown-actions-main {
+    padding: 0.22rem 0.5rem;
+    border-radius: 999px 0 0 999px;
+    border-right: none;
+  }
+
+  .markdown-actions-toggle {
+    padding: 0.22rem 0.4rem;
+    border-radius: 0 999px 999px 0;
+  }
+
+  .markdown-actions button:hover,
+  .markdown-actions button:focus-visible {
+    border-color: var(--link-color);
+    color: var(--link-color);
+    background: var(--accent-color-soft);
+    outline: none;
+  }
+
+  .markdown-menu {
+    position: absolute;
+    top: calc(100% + 0.2rem);
+    right: 0;
+    margin: 0;
+    padding: 0.2rem;
+    list-style: none;
+    min-width: 10rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.45rem;
+    background: var(--body-background-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+    z-index: 60;
+  }
+
+  .markdown-menu button {
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.4rem 0.45rem;
+    color: var(--body-text-color);
+  }
+
+  .markdown-action-status {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 0.2rem);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    white-space: nowrap;
+    padding: 0.2rem 0.35rem;
+    border-radius: 0.3rem;
+    background: var(--body-background-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: var(--body-text-color);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0.12rem);
+    transition: opacity 120ms ease, transform 120ms ease;
+    z-index: 70;
+  }
+
+  .markdown-action-status.is-visible {
+    opacity: 0.95;
+    transform: translateY(0);
+  }
+
+  .markdown-action-status.is-error {
+    color: #b3261e;
+    opacity: 1;
+  }
+
+  @media (max-width: 31.24rem) {
+    .breadcrumb-nav.has-markdown-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .breadcrumb-nav.has-markdown-actions .markdown-actions {
+      align-items: flex-start;
+    }
+  }
 </style>
 
 <script>
@@ -213,8 +387,8 @@
       applyTheme(preference);
     };
 
-    const mountInAuxNav = () => {
-      const root = document.getElementById("theme-switcher-root");
+    const mountInAuxNav = (rootId) => {
+      const root = document.getElementById(rootId);
       const auxList = document.querySelector(".aux-nav-list");
       if (root && auxList && !root.closest(".aux-nav")) {
         const item = document.createElement("li");
@@ -226,11 +400,211 @@
       return !!(root && root.closest(".aux-nav"));
     };
 
+    const mountInBreadcrumb = () => {
+      const root = document.getElementById("markdown-actions-root");
+      if (!root) return false;
+      if (root.closest(".breadcrumb-nav")) {
+        root.hidden = false;
+        return true;
+      }
+
+      const breadcrumbNav = document.querySelector(".main-content-wrap .breadcrumb-nav");
+      if (breadcrumbNav) {
+        breadcrumbNav.classList.add("has-markdown-actions");
+        breadcrumbNav.appendChild(root);
+        root.hidden = false;
+        return true;
+      }
+
+      const contentWrap = document.querySelector(".main-content-wrap");
+      if (contentWrap) {
+        contentWrap.prepend(root);
+        root.hidden = false;
+        return true;
+      }
+      return false;
+    };
+
+    const stripFrontMatter = (text) => text.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "");
+
+    const copyText = async (text) => {
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+
+      const fallback = document.createElement("textarea");
+      fallback.value = text;
+      fallback.setAttribute("readonly", "");
+      fallback.style.position = "absolute";
+      fallback.style.left = "-9999px";
+      document.body.appendChild(fallback);
+      fallback.select();
+      document.execCommand("copy");
+      fallback.remove();
+    };
+
+    const initMarkdownActions = () => {
+      const root = document.getElementById("markdown-actions-root");
+      if (!root) return;
+
+      const copyButton = document.getElementById("markdown-copy-button");
+      const toggleButton = document.getElementById("markdown-menu-button");
+      const menu = document.getElementById("markdown-menu");
+      const menuCopy = document.getElementById("markdown-menu-copy");
+      const menuRaw = document.getElementById("markdown-menu-raw");
+      const menuGithub = document.getElementById("markdown-menu-github");
+      const status = document.getElementById("markdown-action-status");
+      const sourceNode = document.getElementById("markdown-source-json");
+      if (!copyButton || !toggleButton || !menu || !menuCopy || !menuRaw || !menuGithub || !status) return;
+
+      const menuItems = Array.from(menu.querySelectorAll('button[role="menuitem"]'));
+      let markdownCache = null;
+      let statusTimer = null;
+
+      const setStatus = (message, isError) => {
+        if (statusTimer) {
+          window.clearTimeout(statusTimer);
+          statusTimer = null;
+        }
+        status.textContent = message || "";
+        status.classList.toggle("is-error", !!isError);
+        status.classList.toggle("is-visible", !!message);
+        if (message) {
+          statusTimer = window.setTimeout(() => {
+            status.textContent = "";
+            status.classList.remove("is-visible");
+            status.classList.remove("is-error");
+          }, 2600);
+        }
+      };
+
+      const buildUrl = (base, pagePath) => {
+        if (!base || !pagePath) return "";
+        const normalizedPath = pagePath.replace(/^\//, "");
+        return base + encodeURI(normalizedPath);
+      };
+
+      const getUrls = () => {
+        const pagePath = root.dataset.pagePath || "";
+        const rawBase = root.dataset.rawBase || "";
+        const blobBase = root.dataset.blobBase || "";
+        return {
+          rawUrl: buildUrl(rawBase, pagePath),
+          githubUrl: buildUrl(blobBase, pagePath),
+        };
+      };
+
+      const closeMenu = (focusToggle) => {
+        menu.hidden = true;
+        toggleButton.setAttribute("aria-expanded", "false");
+        if (focusToggle) toggleButton.focus();
+      };
+
+      const openMenu = () => {
+        menu.hidden = false;
+        toggleButton.setAttribute("aria-expanded", "true");
+      };
+
+      const ensureMarkdown = async () => {
+        if (markdownCache !== null) return markdownCache;
+        if (sourceNode && sourceNode.textContent) {
+          try {
+            const source = JSON.parse(sourceNode.textContent);
+            if (typeof source === "string" && source.length > 0) {
+              markdownCache = stripFrontMatter(source);
+              return markdownCache;
+            }
+          } catch (error) {
+            // Fall back to remote fetch when local source parsing fails.
+          }
+        }
+        const { rawUrl } = getUrls();
+        if (!rawUrl) throw new Error("Unable to resolve markdown URL.");
+        const response = await fetch(rawUrl, { credentials: "omit" });
+        if (!response.ok) throw new Error("Unable to load markdown source.");
+        const source = await response.text();
+        markdownCache = stripFrontMatter(source);
+        return markdownCache;
+      };
+
+      const handleCopy = async () => {
+        try {
+          const markdown = await ensureMarkdown();
+          await copyText(markdown);
+          setStatus("Markdown copied.", false);
+        } catch (error) {
+          setStatus("Unable to load markdown source.", true);
+        }
+      };
+
+      const openUrl = (url) => {
+        if (!url) {
+          setStatus("Unable to resolve page source URL.", true);
+          return;
+        }
+        window.open(url, "_blank", "noopener,noreferrer");
+        setStatus("", false);
+      };
+
+      copyButton.addEventListener("click", handleCopy);
+      menuCopy.addEventListener("click", async () => {
+        closeMenu(true);
+        await handleCopy();
+      });
+      menuRaw.addEventListener("click", () => {
+        closeMenu(true);
+        openUrl(getUrls().rawUrl);
+      });
+      menuGithub.addEventListener("click", () => {
+        closeMenu(true);
+        openUrl(getUrls().githubUrl);
+      });
+
+      toggleButton.addEventListener("click", () => {
+        if (menu.hidden) {
+          openMenu();
+          menuItems[0]?.focus();
+          return;
+        }
+        closeMenu(true);
+      });
+
+      toggleButton.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowDown") {
+          event.preventDefault();
+          openMenu();
+          menuItems[0]?.focus();
+        }
+      });
+
+      menu.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          closeMenu(true);
+          return;
+        }
+
+        if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
+        event.preventDefault();
+        const currentIndex = menuItems.indexOf(document.activeElement);
+        const delta = event.key === "ArrowDown" ? 1 : -1;
+        const nextIndex = (currentIndex + delta + menuItems.length) % menuItems.length;
+        menuItems[nextIndex]?.focus();
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!root.contains(event.target)) closeMenu(false);
+      });
+    };
+
     const init = () => {
       styleLogoText();
-      mountInAuxNav();
+      mountInAuxNav("theme-switcher-root");
+      mountInBreadcrumb();
       let preference = getPreference();
       applyTheme(preference);
+      initMarkdownActions();
 
       const button = document.getElementById("theme-cycle-button");
       if (button) {

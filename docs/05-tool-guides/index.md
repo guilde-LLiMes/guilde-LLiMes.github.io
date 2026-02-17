@@ -34,15 +34,15 @@ For executable quality gates across tools, see [Hooks](hooks.md).
 
 ## Which Guide Do You Need?
 
-- **Using Claude Code?** → [Claude Code Guide](claude-code.md)
-- **Want runtime quality gates?** → [Hooks Guide](hooks.md)
-- **Want reusable workflows instead of repeated prompts?** → [Skills Guide](skills.md)
-- **Working on bigger tasks and need delegation?** → [Sub-Agents Guide](sub-agents.md)
-- **Need specialist agents collaborating as a system?** → [Agent Teams Guide](agent-teams.md)
-- **Using Cursor?** → [Cursor Guide](cursor.md)
-- **Using GitHub Copilot?** → [GitHub Copilot Guide](github-copilot.md)
-- **Want a tool-agnostic format?** → [AGENTS.md Guide](agents-md.md)
-- **Using multiple tools?** → Start with AGENTS.md as a base, add tool-specific files for features you need
+Available guides:
+
+{% include components/child-pages-list.html parent=page.title path_prefix="docs/05-tool-guides/" current_url=page.url %}
+
+For most teams:
+
+- Start with [AGENTS.md](agents-md.md) for portable baseline guidance.
+- Add your primary tool guide next (Claude Code, Cursor, or Copilot).
+- Add [Hooks](hooks.md), [Skills](skills.md), [Sub-Agents](sub-agents.md), and [Agent Teams](agent-teams.md) only when those workflows become necessary.
 
 ## Multi-Tool Strategy
 

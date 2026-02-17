@@ -1,0 +1,19 @@
+{% assign child_pages = site.pages | where: "parent", include.parent | sort: "nav_order" %}
+{% capture list_items %}
+{% for child in child_pages %}
+  {% if child.url != include.current_url %}
+    {% if include.path_prefix == nil or child.path contains include.path_prefix %}
+      <li><a href="{{ child.url | relative_url }}">{{ child.title }}</a></li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% endcapture %}
+{% assign list_items_stripped = list_items | strip %}
+
+{% if list_items_stripped != "" %}
+<ul>
+{{ list_items }}
+</ul>
+{% else %}
+<p><em>No child pages found.</em></p>
+{% endif %}

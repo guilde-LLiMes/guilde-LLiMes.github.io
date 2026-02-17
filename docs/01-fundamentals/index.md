@@ -10,9 +10,9 @@ permalink: /fundamentals/
 
 The conceptual foundation for building effective LLM guidelines. Read these before writing your first guideline.
 
-- [Three-Tier Model](three-tier-model.md) — must / should / nice-to-have prioritization framework
-- [Token Budgets](token-budgets.md) — context window limits and writing for information density
-- [Incremental Adoption](incremental-adoption.md) — how to build guidelines over time, not all at once
+Read these first:
+
+{% include components/child-pages-list.html parent=page.title path_prefix="docs/01-fundamentals/" current_url=page.url %}
 
 ## References
 

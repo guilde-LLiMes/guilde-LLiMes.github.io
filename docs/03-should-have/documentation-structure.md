@@ -48,6 +48,23 @@ Module docs:
 - Keep module docs under 50 lines — link to architecture docs for depth
 ```
 
+## Optional: Applied Patterns Branch
+
+If you want practical "how we executed this" examples without mixing them into core principles, add a separate branch in your docs tree:
+
+```markdown
+docs/patterns/
+  README.md                    # pattern template + contribution rule
+  knip-clean-during-refactor.md
+  temporary-ci-exception-policy.md
+```
+
+Rule of thumb:
+
+- Core docs define stable policy.
+- `docs/patterns/` shows implementation recipes and transitional workflows.
+- Every temporary pattern must include owner, ticket, and expiry/removal condition.
+
 ## Common Mistakes
 
 **No distinction between what goes where.** "Put docs in docs/" is too vague when you have architecture docs, API docs, and user guides.

@@ -28,7 +28,7 @@ These are non-negotiable. Without them, the LLM will produce code that fundament
 | [Security Basics](../02-must-have/security-basics.md) | Model logs secrets, bypasses auth |
 | [LLM Guardrails](../02-must-have/llm-guardrails.md) | Model modifies migrations, CI configs, infra |
 
-**When to write**: Day 1. Pick at least 3 that matter most for your project.
+**When to write**: Stage 1. Pick at least 3 that matter most for your project.
 
 ### Should-Have — Reduce variance
 

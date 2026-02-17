@@ -172,6 +172,7 @@
     align-items: flex-end;
     gap: 0.2rem;
     position: relative;
+    z-index: 80;
   }
 
   .breadcrumb-nav.has-markdown-actions {
@@ -195,6 +196,14 @@
     flex: 0 0 auto;
     margin-left: auto;
     z-index: 30;
+  }
+
+  .markdown-actions-row {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 0.85rem 0;
+    position: relative;
+    z-index: 10;
   }
 
   .markdown-actions-group {
@@ -295,6 +304,10 @@
 
     .breadcrumb-nav.has-markdown-actions .markdown-actions {
       align-items: flex-start;
+    }
+
+    .markdown-actions-row {
+      justify-content: flex-start;
     }
   }
 </style>
@@ -418,7 +431,13 @@
 
       const contentWrap = document.querySelector(".main-content-wrap");
       if (contentWrap) {
-        contentWrap.prepend(root);
+        let row = contentWrap.querySelector(".markdown-actions-row");
+        if (!row) {
+          row = document.createElement("div");
+          row.className = "markdown-actions-row";
+          contentWrap.prepend(row);
+        }
+        row.appendChild(root);
         root.hidden = false;
         return true;
       }

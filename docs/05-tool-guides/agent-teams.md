@@ -21,20 +21,16 @@ This makes "agents talking to each other" explicit and structured instead of ad 
 
 ## Claude Code Agent Teams
 
-Claude Code supports team definitions in:
+Agent teams are an experimental Claude Code feature. Enable them by setting `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in the environment where Claude Code runs.
 
-- `.claude/agents/team/**/*.md`
+Use natural-language delegation in chat to involve teammates for specialized work.
 
-The tooling includes:
+Important clarification:
 
-- `/agents` to manage agents
-- `/agents-team` to create and manage agent teams
+- there is no separate `.claude/agents/team/` team-manifest path
+- there is no `/agents-team` command
 
-Team packs can define:
-
-- a main architecture/orchestrator agent
-- specialist teammate agents
-- collaboration patterns between teammates
+Use settings and prompts to shape collaboration behavior, and pair teams with custom agents when you need reusable specialist roles.
 
 ## Team Design Pattern
 

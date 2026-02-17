@@ -29,25 +29,21 @@ Use hooks for:
 
 Claude Code has first-class lifecycle hooks. In practice, this is the most complete built-in hook system across current coding-agent tools.
 
-### Supported lifecycle events
+### Lifecycle Coverage (High Level)
 
-- `PreToolUse` — before tool execution
-- `PostToolUse` — after tool execution
-- `Notification` — when Claude emits notifications
-- `UserPromptSubmit` — when the user submits a prompt
-- `Stop` — when Claude finishes responding
-- `SubagentStop` — when a subagent finishes
-- `PreCompact` — before context compaction
+Claude hooks can run at key lifecycle points, including:
+
+- session boundaries
+- prompt submission
+- before/after tool calls
+- permission and failure handling
+- sub-agent or teammate lifecycle events
+
+For the exact and current event names, use the official hooks reference in the References section below.
 
 ### Hook handler types
 
-Claude supports multiple hook handler types:
-
-- **Command hooks** — run shell commands/scripts
-- **Prompt hooks** — inject natural-language guidance at hook time
-- **Agent hooks** — invoke a subagent to evaluate or gate behavior
-
-This makes hooks useful for both deterministic checks (scripts) and policy judgment flows (prompt/agent).
+Claude hooks run command handlers (shell commands/scripts). Handlers can emit stderr/stdout and structured JSON to control blocking and messaging behavior.
 
 ### Configuration locations
 

@@ -36,8 +36,8 @@ Helpful capabilities:
 
 OpenCode also supports custom agents, with common locations:
 
-- project: `.opencode/agent/*.md`
-- global: `~/.config/opencode/agent/*.md`
+- project: `.opencode/agents/`
+- global: `~/.config/opencode/agents/`
 
 This gives a similar delegation model: keep the main chat as coordinator, dispatch substantial tasks to specialized agents, then merge results.
 

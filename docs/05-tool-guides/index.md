@@ -51,7 +51,8 @@ If your team uses more than one tool:
 1. **Write your guidelines as plain markdown** (the content from this framework)
 2. **Pick a primary format** for the tool most of your team uses
 3. **Add secondary formats** only if a tool's unique features add value (e.g., Cursor's glob scoping)
-4. **Keep content in sync** — update the source, then update the format-specific files
+4. **If Claude Code is in the mix, keep a root `CLAUDE.md` synced to AGENTS.md** (copy, symlink, or `@AGENTS.md`)
+5. **Keep content in sync** — update the source, then update the format-specific files
 
 The overhead of maintaining 2-3 format variants is small. The content — which is 90% of the work — is shared.
 

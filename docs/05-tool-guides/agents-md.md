@@ -128,6 +128,8 @@ Use this as a structure skeleton. Populate it with your own project constraints 
 
 **Override confusion.** Teams expect subdirectory files to add to the root. They replace it. Repeat shared rules in each file, or keep all rules at the root.
 
+**Claude Code mismatch.** Claude Code’s native file is `CLAUDE.md`. If Claude Code is in your tool mix, keep a root `CLAUDE.md` synced to AGENTS.md (copy, symlink, or `@AGENTS.md`).
+
 **Not testing across tools.** An AGENTS.md that works well in Cursor might be structured differently than what Claude Code prefers. Test with your primary tools.
 
 **Too long.** The same token budget principles apply. Keep it dense and scannable.

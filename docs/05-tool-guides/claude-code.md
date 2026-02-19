@@ -126,6 +126,8 @@ Use this as a scaffold, not a template to copy verbatim. Fill each section with 
 
 **CLAUDE.md is too long.** If it's over 150 lines, split into subdirectory files or trim content.
 
+**AGENTS.md only.** Claude Code’s native file is `CLAUDE.md`. If your team uses AGENTS.md for multi-tool support, keep a root `CLAUDE.md` synced (copy, symlink, or `@AGENTS.md`) so Claude reliably loads the same rules.
+
 **Instructions contradict each other.** Root says "use Prisma," subdirectory says "use raw SQL." Claude follows whichever it reads last.
 
 **Stale after refactoring.** If you renamed directories or changed frameworks, update CLAUDE.md or the model follows outdated instructions.

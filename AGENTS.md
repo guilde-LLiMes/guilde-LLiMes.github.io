@@ -29,3 +29,16 @@ For tool or feature documentation, structure content in this order:
 1. Problem: current user pain or failure pattern.
 2. Value: what improves after applying the guidance.
 3. When to use: concrete decision cues and scenarios.
+
+## Local Skills Purpose (Must)
+
+Repository-owned skills live in `skills/*/SKILL.md`.
+In this project, `skills/` is primarily product content being authored and maintained.
+
+- Do not treat local skills as always-on runtime routing rules for unrelated repository work.
+- Treat `skills/*/SKILL.md` as source artifacts to design, review, test, and improve.
+- Run a local skill workflow only when explicitly requested, or when validating that skill's behavior.
+
+Current local skills:
+- `llm-doc-audit` (`skills/llm-doc-audit/SKILL.md`)
+- `playwright-doc-bootstrap` (`skills/playwright-doc-bootstrap/SKILL.md`)

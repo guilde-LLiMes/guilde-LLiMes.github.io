@@ -71,6 +71,16 @@ Goal: detect missing or unclear guidance, not force one specific project structu
   - If multiple instruction files exist, inheritance/scope behavior is clear.
 - [ ] Reusable workflows are documented
   - Skills/sub-agents/hooks are documented where they are part of team workflow.
+- [ ] Canonical instruction entrypoint exists
+  - Project defines which top-level instruction file(s) are authoritative for agent startup context.
+- [ ] Scoped instruction files are reachable from entrypoints
+  - Nested or package-level instruction docs are explicitly linked or discoverable by documented workflow.
+- [ ] No orphan instruction files with mandatory constraints
+  - Files containing must/required constraints are not isolated from canonical entrypoints.
+- [ ] Scoped instruction files declare scope
+  - Each scoped instruction file clearly states where it applies (path/package/task type).
+- [ ] High-risk scoped guidance is linked
+  - Testing, safety, or release-critical rules in scoped docs are linked from canonical entrypoints.
 
 ## 5. Maintenance and Drift Control
 

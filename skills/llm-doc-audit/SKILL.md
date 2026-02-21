@@ -23,6 +23,7 @@ Do not enforce a single architecture pattern. Validate clarity, completeness, an
 - Mark non-relevant checklist items as `N/A` with a short reason.
 - Prefer smallest useful documentation fix over broad rewrites.
 - Prioritize high-risk gaps first (safety, API contracts, testing, boundaries).
+- Default to concise recommendations: return only the top 3-5 highest-value changes unless the user explicitly asks for full detail.
 - For testing guidance, require explicit scope and commands; do not infer intent from folder names alone.
 - Treat unreachable instructions as a first-class gap: rules that exist but are not discoverable from active instruction entrypoints are effectively missing.
 - Require explicit scope and precedence when multiple instruction files exist.
@@ -64,19 +65,19 @@ Return findings in this order:
    - scoped instruction files discovered
    - linked vs unlinked scoped files
    - precedence clarity status
-3. Findings list (ordered by severity), each including:
+3. Critical changes only (top 3-5, ordered by value/risk), each including:
    - checklist area
    - gap type (`missing`, `unclear`, `outdated`)
    - evidence (file path + short reason)
    - minimal improvement action
    - validation method
-4. Package/module testing matrix (if applicable), with:
-   - package or module
-   - observed test file evidence
-   - framework/tool mapping per test type (or missing)
-   - testing documentation source (or missing)
-   - instruction entrypoint linkage status (`AGENTS.md`, `CLAUDE.md`, equivalent)
-5. Quick wins: top 3 smallest high-value improvements.
+4. Remaining gaps overview (no deep list):
+   - count of remaining gaps by severity
+   - 1-2 line pattern summary (for example: "mostly low-severity clarity gaps in test naming")
+5. Package/module testing matrix (if applicable), but concise:
+   - include only rows tied to top 3-5 critical changes
+6. Expansion prompt:
+   - ask whether to provide full findings list with all gaps and per-item actions.
 
 ## Guardrails
 

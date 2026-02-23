@@ -60,6 +60,12 @@ Practical first three skills:
 
 These give immediate value with low setup complexity.
 
+## Skill Routing Without Duplication
+
+If your project uses task-to-skill routing, keep that map in one canonical operations page and link to it from other docs instead of repeating the table.
+
+If skill auto-selection is weak in your tool, invoke skills explicitly by name and include a short task cue (for example, "run `llm-doc-audit` on current docs").
+
 ## Discovering Skills
 
 - [Skills Docs](https://skillsmp.com/en/docs)

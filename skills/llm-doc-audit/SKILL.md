@@ -13,6 +13,9 @@ Do not enforce a single architecture pattern. Validate clarity, completeness, an
 - Repository root
 - LLM-facing docs (for example: `AGENTS.md`, `CLAUDE.md`, `.cursor/rules/*.mdc`, `copilot-instructions.md`)
 - Test file inventory from repository scan (for example: `test/`, `tests/`, `__tests__/`, `e2e/`, `integration/`)
+- Documentation checklist artifact when present (for example: `docs/00-introduction/framework-checklist.md`)
+- Skill catalog docs when present (for example: `docs/05-tool-guides/skills.md`, `skills/README.md`)
+- Validation protocol skill when present (`skills/validation-protocol/SKILL.md`)
 - Optional incident reports describing prior instruction failures (for example: `dev/incidents/*.md`)
 - Optional mode flag: `--all` (return full findings list instead of top 3-5)
 - `references/checklist.md`
@@ -29,6 +32,10 @@ Do not enforce a single architecture pattern. Validate clarity, completeness, an
 - For testing guidance, require explicit scope and commands; do not infer intent from folder names alone.
 - Treat unreachable instructions as a first-class gap: rules that exist but are not discoverable from active instruction entrypoints are effectively missing.
 - Require explicit scope and precedence when multiple instruction files exist.
+- Check whether a project-level documentation checklist artifact exists and is discoverable from onboarding paths.
+- When `skills/validation-protocol/SKILL.md` exists, require documentation that explains when to use it and where `DEBUG.md` should live.
+- If a project uses skill routing, require one canonical routing location and links instead of duplicated routing tables.
+- Require section/document responsibility boundaries (mission, in-scope, out-of-scope) where the docs define framework structure.
 
 ## Workflow
 
@@ -38,6 +45,7 @@ Do not enforce a single architecture pattern. Validate clarity, completeness, an
    - Scoped instruction files (nested `AGENTS.md`, package-level docs, workflow-specific rule files).
    - Explicit cross-links from entrypoints to scoped files.
    - Scope and precedence statements for multi-file setups.
+   - Responsibility ownership statements for section/docs pages (mission/in-scope/out-of-scope when present).
 3. Map available files to checklist sections in `references/checklist.md`.
 4. Evaluate each checklist item:
    - `Pass`: clear and sufficient
@@ -56,6 +64,16 @@ Do not enforce a single architecture pattern. Validate clarity, completeness, an
    - `Low`: maturity/usability improvement
 8. Propose a minimal improvement action for each gap.
 9. Define a validation method for each proposed action.
+10. Run an operational workflow coverage pass:
+   - Verify documentation checklist artifact coverage and discoverability.
+   - Verify Validation Protocol integration path (`validation-protocol` -> `DEBUG.md` + entrypoint link expectations).
+   - Verify skill routing ownership and non-duplication (when routing is used).
+11. Run checklist parity pass when framework checklist exists:
+   - Compare `docs/00-introduction/framework-checklist.md` against `references/checklist.md` coverage areas.
+   - Flag mismatches where the framework checklist omits a high-risk audit area.
+12. Run responsibility-overlap pass:
+   - Detect duplicate full-guidance blocks across section branches.
+   - Prefer one canonical owner page plus links from non-owner pages.
 
 ## Output Format
 
@@ -82,7 +100,17 @@ Return findings in this order:
 5. Package/module testing matrix (if applicable):
    - default: include only rows tied to top 3-5 critical changes
    - `--all`: include full matrix
-6. Expansion prompt (default mode only):
+6. Operational workflow coverage summary:
+   - checklist artifact status (present/reachable or gap)
+   - validation protocol integration status
+   - skill routing canonical-location status (or `N/A`)
+7. Framework checklist parity summary (when applicable):
+   - parity status (`aligned` or `drifted`)
+   - drift evidence and minimal fix
+8. Responsibility overlap summary:
+   - overlap status (`clear ownership` or `overlap detected`)
+   - duplicate areas and canonical-owner recommendation
+9. Expansion prompt (default mode only):
    - ask whether to rerun with `--all` for complete findings.
 
 ## Guardrails
@@ -93,3 +121,4 @@ Return findings in this order:
 - Do not require all test levels (`unit`/`integration`/`e2e`) when the project intentionally uses a subset; require explicit documentation of that choice.
 - Do not require one framework across packages; require explicit framework choices and boundaries for each package/module and test type.
 - Do not assume toolchains recursively load nested instruction files; require explicit linkage evidence.
+- Do not require a specific number of skills; require only clear ownership and non-duplicated routing documentation when routing is used.

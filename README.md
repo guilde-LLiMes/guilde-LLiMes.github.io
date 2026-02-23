@@ -39,6 +39,7 @@ Start with 3 must-haves. Add more as you see what the LLM gets wrong.
 
 | You want to... | Start here | Time |
 |---|---|---|
+| Get a one-screen rollout checklist | [Framework checklist](docs/00-introduction/framework-checklist.md) | ~5 min |
 | Get guidelines running fast | [Three-tier model](docs/01-fundamentals/three-tier-model.md) → pick 3 from [Must-haves](docs/02-must-have/index.md) → write them | ~15 min |
 | Understand the full framework | [Why guidelines matter](docs/00-introduction/why-guidelines-matter.md) → read through Fundamentals → all Must-haves | ~2 hrs |
 | Set up a specific tool | [Tool guides](docs/05-tool-guides/index.md) → your tool → reference Must-haves for content | ~30 min |
@@ -56,6 +57,7 @@ If you want to improve this framework, use the [Contributing Guide](CONTRIBUTING
 - [Should-Have Guidelines](docs/03-should-have/index.md)
 - [Nice-to-Have Guidelines](docs/04-nice-to-have/index.md)
 - [Tool Guides](docs/05-tool-guides/index.md)
+- [Skills](skills/README.md)
 - [Glossary](glossary.md)
 - [Contributing Guide](CONTRIBUTING.md)
 

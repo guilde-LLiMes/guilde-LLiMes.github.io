@@ -4,13 +4,20 @@ title: Must-Have
 nav_order: 4
 has_children: true
 permalink: /must-have/
+doc_mission: "Define minimum required artifacts that prevent breakage."
+doc_out_of_scope: "Optional maturity practices and tool-format details."
 ---
 
 # Must-Have Guidelines
 
 These are the non-negotiables. Without them, LLMs will produce code that fundamentally doesn't fit your project — wrong frameworks, wrong file locations, wrong assumptions about what the system does.
 
-You don't need all eight from day one. Pick the 3 that matter most for your project and start there. See [Incremental Adoption](../01-fundamentals/incremental-adoption.md) for the ramp-up strategy.
+## Section Responsibility
+
+- Mission: specify minimum required artifacts that prevent breakage.
+- In scope: must-have artifact content and minimum acceptance criteria.
+
+You don't need all eight in the initial stage. Pick the 3 that matter most for your project and start there. See [Incremental Adoption](../01-fundamentals/incremental-adoption.md) for the ramp-up strategy.
 
 ## The Eight Must-Haves
 

@@ -4,13 +4,20 @@ title: Should-Have
 nav_order: 5
 has_children: true
 permalink: /should-have/
+doc_mission: "Define consistency and team-alignment artifacts."
+doc_out_of_scope: "Baseline safety requirements and late-stage maturity controls."
 ---
 
 # Should-Have Guidelines
 
 These guidelines reduce variance. The LLM can produce working code without them, but the output will be less consistent, harder to review, and more likely to drift from your team's established patterns.
 
-Add these after your must-haves are solid — typically within the first month of using LLM-assisted coding on a project.
+## Section Responsibility
+
+- Mission: define artifacts that improve consistency, reviewability, and shared team behavior.
+- In scope: should-have conventions and alignment guidance after must-haves are stable.
+
+Add these after your must-haves are solid — typically in Stage 2 of LLM-assisted coding adoption for a project.
 
 ## The Seven Should-Haves
 

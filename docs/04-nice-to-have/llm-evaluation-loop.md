@@ -24,7 +24,7 @@ An evaluation loop tracks which guidelines are effective, which are failing, and
 
 1. **Start simple.** A shared document or issue label where the team records "the LLM got this wrong." No tooling needed.
 2. **Categorize failures.** Wrong framework, wrong file location, wrong test type, security violation, architecture violation — each category maps to a guideline.
-3. **Review monthly.** Look at failure patterns. If one category dominates, that guideline needs work.
+3. **Review on defined triggers.** Look at failure patterns. If one category dominates, that guideline needs work.
 
 ## Example
 
@@ -41,7 +41,7 @@ Failure categories:
 - style-mismatch   → Coding Standards guideline
 - scope-creep      → Project Scope guideline
 
-Monthly review:
+Trigger-based review:
 - Count failures by category
 - Top category → rewrite or expand that guideline
 - If a guideline is followed consistently → it's working, leave it

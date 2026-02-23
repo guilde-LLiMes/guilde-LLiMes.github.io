@@ -4,11 +4,18 @@ title: Nice-to-Have
 nav_order: 6
 has_children: true
 permalink: /nice-to-have/
+doc_mission: "Define maturity artifacts for scale, compliance, and long-run quality."
+doc_out_of_scope: "Early adoption baseline requirements."
 ---
 
 # Nice-to-Have Guidelines
 
 These guidelines matter at scale: larger teams, regulated domains, mature codebases, or projects where LLM usage is heavy enough that subtle drift becomes a real problem.
+
+## Section Responsibility
+
+- Mission: define maturity artifacts for scale, compliance, and long-run quality.
+- In scope: advanced controls added after must-have and should-have baselines are working.
 
 Don't start here. These build on a solid foundation of [must-haves](../02-must-have/index.md) and [should-haves](../03-should-have/index.md). Add them when you feel the specific pain they address.
 

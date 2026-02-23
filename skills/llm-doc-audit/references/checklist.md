@@ -62,6 +62,10 @@ Goal: detect missing or unclear guidance, not force one specific project structu
   - Terms/entities are documented to prevent naming and concept drift.
 - [ ] Documentation map is understandable
   - LLM can discover where rules live and which document is authoritative.
+- [ ] Section/document responsibilities are declared
+  - Section index pages or canonical docs state mission/in-scope/out-of-scope boundaries.
+- [ ] Cross-document ownership is non-overlapping
+  - The same requirement is not repeated as full guidance across multiple pages without a declared source of truth.
 
 ## 4. Tool and Loading Fit
 
@@ -71,6 +75,12 @@ Goal: detect missing or unclear guidance, not force one specific project structu
   - If multiple instruction files exist, inheritance/scope behavior is clear.
 - [ ] Reusable workflows are documented
   - Skills/sub-agents/hooks are documented where they are part of team workflow.
+- [ ] Documentation checklist artifact exists and is reachable
+  - A project-level checklist page (for example, framework onboarding checklist) is discoverable from primary docs paths.
+- [ ] Validation protocol workflow is documented (if applicable)
+  - If a validation/debugging protocol skill exists, docs explain when to use it and expected output artifact (`DEBUG.md`).
+- [ ] Skill routing ownership is clear (if applicable)
+  - If task-to-skill routing is used, docs keep one canonical routing location and avoid duplicate routing tables.
 - [ ] Canonical instruction entrypoint exists
   - Project defines which top-level instruction file(s) are authoritative for agent startup context.
 - [ ] Scoped instruction files are reachable from entrypoints
@@ -88,8 +98,8 @@ Goal: detect missing or unclear guidance, not force one specific project structu
   - Important rules map to tests, lint, type checks, CI checks, or scripts.
 - [ ] Duplication is controlled
   - Docs avoid conflicting duplicates and point to the source of truth.
-- [ ] Update cadence exists
-  - Project has an explicit way to keep LLM docs current with architecture/code changes.
+- [ ] Update triggers exist
+  - Project has explicit trigger conditions to keep LLM docs current with architecture/code changes.
 - [ ] Failure feedback loop exists
   - Recurring LLM mistakes are captured and turned into doc improvements.
 

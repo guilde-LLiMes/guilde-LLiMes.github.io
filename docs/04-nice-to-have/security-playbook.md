@@ -9,7 +9,7 @@ parent: Nice-to-Have
 
 ## Why This Matters
 
-[Security Basics](../02-must-have/security-basics.md) covers the day-to-day rules: don't log secrets, use auth middleware, encrypt data. A security playbook covers what happens when something goes wrong — or when the stakes are high enough that normal coding rules aren't sufficient.
+[Security Basics](../02-must-have/security-basics.md) covers baseline preventive rules: don't log secrets, use auth middleware, encrypt data. A security playbook covers what happens when something goes wrong — or when the stakes are high enough that normal coding rules aren't sufficient.
 
 This is most relevant for teams handling sensitive data, operating in regulated industries, or building systems where a security mistake has outsized consequences.
 
@@ -50,7 +50,7 @@ Compliance (SOC 2):
 
 ## Common Mistakes
 
-**Conflating security basics with the playbook.** Basics are preventive (daily rules). The playbook is reactive (incident response) and risk-classification. Keep them separate.
+**Conflating security basics with the playbook.** Basics are preventive baseline rules. The playbook is reactive (incident response) and risk-classification. Keep them separate.
 
 **No data classification.** Without classification, the model treats all data the same. Some data is fine to log; some must never leave the database unencrypted.
 

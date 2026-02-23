@@ -7,7 +7,7 @@ parent: Fundamentals
 
 # Incremental Adoption
 
-The worst way to write guidelines is to sit down and try to document everything at once. You'll spend hours producing a comprehensive file that's too long for the model to follow, too generic to be useful, and stale within a month.
+The worst way to write guidelines is to sit down and try to document everything at once. You'll spend hours producing a comprehensive file that's too long for the model to follow, too generic to be useful, and stale after the next major project change.
 
 The better approach: start small, observe, and grow.
 
@@ -88,7 +88,7 @@ Guidelines rot the same way documentation rots: through neglect.
 3. Tighten anything the model has been getting wrong
 4. Check total instruction count — trim if over budget
 
-A monthly review of 10-15 minutes keeps guidelines sharp.
+A trigger-based review keeps guidelines sharp.
 
 ## Anti-Patterns
 
@@ -96,7 +96,7 @@ A monthly review of 10-15 minutes keeps guidelines sharp.
 
 **Copying someone else's template wholesale.** Your project isn't their project. A React SPA and a Go microservice need fundamentally different guidelines.
 
-**Never removing guidelines.** If a rule hasn't been relevant in 3 months, it's taking up token budget for nothing.
+**Never removing guidelines.** If a rule hasn't been relevant across multiple review triggers, it's taking up token budget for nothing.
 
 **Writing guidelines instead of using tooling.** If a linter, formatter, or type checker can enforce a rule, let it. Don't waste guideline space on things that tools handle better.
 

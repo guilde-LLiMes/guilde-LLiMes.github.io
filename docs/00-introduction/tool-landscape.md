@@ -96,7 +96,7 @@ Most guideline categories (project scope, tech stack, coding standards) translat
 
 ## What You Don't Need
 
-- You don't need every tool's format from day one
+- You don't need every tool's format in the initial stage
 - You don't need special syntax — plain markdown works everywhere
 - You don't need separate content per tool — the same guidelines serve all of them
 

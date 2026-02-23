@@ -4,11 +4,18 @@ title: Tool Guides
 nav_order: 7
 has_children: true
 permalink: /tool-guides/
+doc_mission: "Translate framework content into tool-specific containers and loading models."
+doc_out_of_scope: "New artifact requirements outside framework tiers."
 ---
 
 # Tool Guides
 
 The principles in this framework are tool-agnostic. The same guidelines — project scope, tech stack, coding standards — work regardless of whether you use Claude Code, Cursor, Copilot, or something else.
+
+## Section Responsibility
+
+- Mission: translate the same guideline content into tool-specific containers and loading models.
+- In scope: file formats, locations, precedence, and tool-specific capabilities.
 
 What differs is the container: file names, locations, syntax, and loading behavior. These guides show how to translate your guidelines into each tool's format.
 

@@ -39,7 +39,7 @@ Advisory (reported, don't block):
 Flaky tests:
 - Quarantine flaky tests in tests/quarantine/
 - Quarantined tests run but don't block CI
-- Fix or delete quarantined tests within 2 weeks
+- Fix or delete quarantined tests by the next stabilization stage
 ```
 
 ## Common Mistakes

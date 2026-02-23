@@ -17,6 +17,8 @@ skills/
     SKILL.md
     references/
       checklist.md
+  validation-protocol/
+    SKILL.md
   playwright-doc-bootstrap/
     SKILL.md
     scripts/
@@ -38,4 +40,5 @@ skills/
 ## Current Intent
 
 - `llm-doc-audit`: audit LLM-facing docs for missing, unclear, or outdated guidance.
+- `validation-protocol`: generate/refresh `DEBUG.md` as an evidence-backed runtime debugging and verification contract.
 - `playwright-doc-bootstrap`: detect Playwright/testing-context gaps, generate target docs, and wire those docs into LLM instruction entrypoints.

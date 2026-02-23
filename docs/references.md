@@ -42,7 +42,6 @@ Use them as background reading. For tool behavior, always verify the latest offi
 - [precommit-llm (GitHub)](https://github.com/dang-nh/precommit-llm)
 - [Prompting for LLM Code Generation (Potpie)](https://github.com/potpie-ai/potpie/wiki/How-to-write-good-prompts-for-generating-code-from-LLMs)
 - [Workflow Discussion: codex-spec (Reddit)](https://www.reddit.com/r/OpenaiCodex/comments/1nf7v9j/codexspec_specificationdriven_development_tool/)
-- [Weekly #53: LLM Workflows in 2026 (dev.to)](https://dev.to/weekly/weekly-53-2025-llm-workflows-code-bottlenecks-ai-adoption-in-2026-c26)
 
 ## Community Case Studies (Use with Caution)
 

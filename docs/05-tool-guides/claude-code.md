@@ -57,6 +57,14 @@ Claude Code's system prompt uses a portion of the context window. Your CLAUDE.md
 - Use dense formatting (see [Token Budgets](../01-fundamentals/token-budgets.md))
 - Move detailed context to subdirectory files where possible
 
+## Unified Multi-Tool Pattern
+
+If your team uses AGENTS.md as the canonical multi-tool format:
+
+1. Keep `AGENTS.md` as the source of truth in each scope.
+2. Add `CLAUDE.md` in the same directory with one line: `@AGENTS.md`.
+3. Update only `AGENTS.md`; keep `CLAUDE.md` as a stable pointer.
+
 ## Hierarchical Structure
 
 Claude Code supports a hierarchy of CLAUDE.md files:
@@ -80,7 +88,7 @@ project/
 - Effectively multiplies your token budget
 
 **Rules:**
-- Each file should be self-contained — don't reference other CLAUDE.md files
+- Each file should be self-contained unless you intentionally use a one-line pointer (`@AGENTS.md`) for multi-tool parity
 - Subdirectory files add to the root, they don't override it
 - Don't duplicate rules across files
 
@@ -126,7 +134,7 @@ Use this as a scaffold, not a template to copy verbatim. Fill each section with 
 
 **CLAUDE.md is too long.** If it's over 150 lines, split into subdirectory files or trim content.
 
-**AGENTS.md only.** Claude Code’s native file is `CLAUDE.md`. If your team uses AGENTS.md for multi-tool support, keep a root `CLAUDE.md` synced (copy, symlink, or `@AGENTS.md`) so Claude reliably loads the same rules.
+**AGENTS.md only.** Claude Code’s native file is `CLAUDE.md`. If AGENTS.md is canonical, create a matching one-line `CLAUDE.md` pointer (`@AGENTS.md`) in each required scope.
 
 **Instructions contradict each other.** Root says "use Prisma," subdirectory says "use raw SQL." Claude follows whichever it reads last.
 

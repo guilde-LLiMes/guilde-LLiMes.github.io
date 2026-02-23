@@ -1,6 +1,6 @@
 ---
 name: llm-doc-audit
-description: Audit a project's LLM-facing documentation for coverage, clarity, drift, and instruction reachability. Use when asked to assess AGENTS.md, CLAUDE.md, Cursor rules, Copilot instructions, or equivalent instruction docs, including whether scoped docs are reachable from canonical entrypoints and whether testing guidance is clear at package/module level in monorepos.
+description: Audit a project's LLM-facing documentation for coverage, clarity, drift, and instruction reachability. Use when asked to assess AGENTS.md, CLAUDE.md, Cursor rules, Copilot instructions, or equivalent instruction docs, including whether scoped docs are reachable from canonical entrypoints and whether testing guidance is clear at package/module level in monorepos. Default output is top 3-5 critical changes; pass --all for full findings.
 ---
 
 # LLM Documentation Audit Skill
@@ -14,6 +14,7 @@ Do not enforce a single architecture pattern. Validate clarity, completeness, an
 - LLM-facing docs (for example: `AGENTS.md`, `CLAUDE.md`, `.cursor/rules/*.mdc`, `copilot-instructions.md`)
 - Test file inventory from repository scan (for example: `test/`, `tests/`, `__tests__/`, `e2e/`, `integration/`)
 - Optional incident reports describing prior instruction failures (for example: `dev/incidents/*.md`)
+- Optional mode flag: `--all` (return full findings list instead of top 3-5)
 - `references/checklist.md`
 
 ## Audit Rules
@@ -23,7 +24,8 @@ Do not enforce a single architecture pattern. Validate clarity, completeness, an
 - Mark non-relevant checklist items as `N/A` with a short reason.
 - Prefer smallest useful documentation fix over broad rewrites.
 - Prioritize high-risk gaps first (safety, API contracts, testing, boundaries).
-- Default to concise recommendations: return only the top 3-5 highest-value changes unless the user explicitly asks for full detail.
+- Default to concise recommendations: return only the top 3-5 highest-value changes.
+- If `--all` is provided, return all findings in severity order with per-item actions and validation.
 - For testing guidance, require explicit scope and commands; do not infer intent from folder names alone.
 - Treat unreachable instructions as a first-class gap: rules that exist but are not discoverable from active instruction entrypoints are effectively missing.
 - Require explicit scope and precedence when multiple instruction files exist.
@@ -65,19 +67,23 @@ Return findings in this order:
    - scoped instruction files discovered
    - linked vs unlinked scoped files
    - precedence clarity status
-3. Critical changes only (top 3-5, ordered by value/risk), each including:
+3. Findings section:
+   - default: critical changes only (top 3-5, ordered by value/risk)
+   - `--all`: full findings list (ordered by severity)
+   - each finding includes:
    - checklist area
    - gap type (`missing`, `unclear`, `outdated`)
    - evidence (file path + short reason)
    - minimal improvement action
    - validation method
-4. Remaining gaps overview (no deep list):
+4. Remaining gaps overview (default mode only, no deep list):
    - count of remaining gaps by severity
    - 1-2 line pattern summary (for example: "mostly low-severity clarity gaps in test naming")
-5. Package/module testing matrix (if applicable), but concise:
-   - include only rows tied to top 3-5 critical changes
-6. Expansion prompt:
-   - ask whether to provide full findings list with all gaps and per-item actions.
+5. Package/module testing matrix (if applicable):
+   - default: include only rows tied to top 3-5 critical changes
+   - `--all`: include full matrix
+6. Expansion prompt (default mode only):
+   - ask whether to rerun with `--all` for complete findings.
 
 ## Guardrails
 

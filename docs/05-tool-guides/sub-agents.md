@@ -3,6 +3,12 @@ layout: default
 title: Sub-Agents
 nav_order: 4
 parent: Tool Guides
+checklist_enabled: true
+checklist_stage: stage-5
+checklist_section: "Stage 5: Tool-Fit Translation"
+checklist_order: 4
+checklist_audit_areas:
+  - tool-loading
 ---
 
 # Sub-Agents — Delegate Large Work Without Losing Main Context

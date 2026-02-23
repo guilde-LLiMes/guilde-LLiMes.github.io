@@ -4,6 +4,13 @@ title: Applied Practice Patterns
 nav_order: 7
 parent: Nice-to-Have
 has_children: true
+checklist_enabled: true
+checklist_stage: stage-4
+checklist_section: "Stage 4: Nice-to-Have Artifacts"
+checklist_order: 7
+checklist_audit_areas:
+  - consistency
+  - maintenance-drift
 ---
 
 # Applied Practice Patterns

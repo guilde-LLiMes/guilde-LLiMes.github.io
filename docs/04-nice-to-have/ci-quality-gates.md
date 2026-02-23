@@ -3,6 +3,13 @@ layout: default
 title: CI Quality Gates
 nav_order: 1
 parent: Nice-to-Have
+checklist_enabled: true
+checklist_stage: stage-4
+checklist_section: "Stage 4: Nice-to-Have Artifacts"
+checklist_order: 1
+checklist_audit_areas:
+  - maintenance-drift
+  - testing-verification
 ---
 
 # CI Quality Gates

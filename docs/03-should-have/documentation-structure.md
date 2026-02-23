@@ -3,6 +3,12 @@ layout: default
 title: Documentation Structure
 nav_order: 7
 parent: Should-Have
+checklist_enabled: true
+checklist_stage: stage-3
+checklist_section: "Stage 3: Should-Have Artifacts"
+checklist_order: 7
+checklist_audit_areas:
+  - consistency
 ---
 
 # Documentation Structure

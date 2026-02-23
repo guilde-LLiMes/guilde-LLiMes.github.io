@@ -30,62 +30,16 @@ Use this page when you need to align a team quickly, onboard a project, or audit
 
 ## Whole-Project Checklist
 
-Mark each item as done only when the evidence is in-repo and discoverable.
+This checklist is generated from checklist frontmatter metadata in source docs.
 
-### A) Core Context Coverage
+{% include components/framework-checklist-generated.html %}
 
-- [ ] Project intent is explicit (what the system does and does not do).
-- [ ] Tech stack is explicit (languages, frameworks, data stores, major constraints).
-- [ ] Directory/module structure is explicit (where code belongs, dependency direction).
-- [ ] Coding/testing/security rules are explicit and imperative.
-- [ ] High-risk boundaries are explicit (protected files, ask-first changes, unsafe operations).
+## Source Of Truth
 
-### B) Safety and Reliability Coverage
-
-- [ ] API/interface compatibility expectations are documented (if applicable).
-- [ ] Security-sensitive handling is documented (secrets, auth/authz, sensitive data).
-- [ ] Testing scope is documented at project level (what test levels apply).
-- [ ] Test commands are documented (full suite + targeted package/module runs).
-- [ ] Critical workflows are constrained (migrations, release, infra, or explicit N/A).
-
-### C) Testing and Verification Coverage
-
-- [ ] Test location and naming conventions are documented.
-- [ ] Test prerequisites are documented (env, fixtures, seed data, services) or explicit N/A.
-- [ ] Pre-PR/pre-merge local validation is documented.
-- [ ] CI expectations and local expectations are aligned.
-- [ ] Each critical rule maps to deterministic verification (hook, script, CI check, or command).
-
-### D) Instruction Topology and Loading Fit
-
-- [ ] Canonical entrypoint is explicit (`AGENTS.md`, `CLAUDE.md`, or both).
-- [ ] Scope/precedence of multi-file instructions is explicit.
-- [ ] Scoped instruction files are reachable from canonical entrypoints.
-- [ ] No mandatory constraints are isolated in orphan docs.
-- [ ] Tool-specific docs exist only where tool-specific behavior is needed.
-
-### E) Operational Validation Coverage
-
-- [ ] Validation protocol/guidance exists for debugging and verification operations.
-- [ ] `DEBUG.md` workflow is explicit (how it is generated, refreshed, and linked from entrypoints).
-- [ ] If skills are used, routing is documented once in a canonical location (no duplicated routing tables).
-- [ ] Tooling references point to artifact outcomes first (what must exist), then optional skill/workflow.
-
-### F) Maintenance and Drift Control
-
-- [ ] Stage/trigger-based review criteria exist for LLM-facing docs.
-- [ ] Recurring failures are captured and converted into doc updates.
-- [ ] Duplication conflicts are controlled (single source of truth per rule set).
-- [ ] Stale guidance has owner + planned update or removal.
-- [ ] Changes in architecture/tooling trigger checklist review.
-
-### G) Adoption and Rollout
-
-- [ ] Team can point to 3 must-have rules already active.
-- [ ] Team has at least one enforced quality gate (hook/wrapper/CI).
-- [ ] Team has at least one operational skill in routine workflow use.
-- [ ] Owner and review date are assigned.
-- [ ] "Done for now" scope is explicit (what is intentionally deferred).
+- Checklist metadata lives in frontmatter of contributing docs (`checklist_*` fields).
+- Generated data file: `_data/framework-checklist.generated.yml`.
+- Rebuild command: `scripts/build-framework-checklist.rb`.
+- Parity validation command: `scripts/validate-framework-checklist-parity.rb`.
 
 ## Traceability Pattern (Use This Table)
 

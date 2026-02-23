@@ -1,0 +1,19 @@
+{% assign generated = site.data.framework-checklist.generated %}
+{% if generated and generated.sections %}
+{% for section in generated.sections %}
+### {{ section.title }}
+
+{% for item in section.items %}
+{% assign source_page = site.pages | where: "path", item.path | first %}
+- [ ] {{ item.label }}{% if source_page %} ([{{ item.title }}]({{ source_page.url | relative_url }})){% else %} (`{{ item.path }}`){% endif %}
+{% endfor %}
+
+{% endfor %}
+{% if generated.coverage_complete == true %}
+Checklist coverage parity with required audit areas: `PASS`.
+{% else %}
+Checklist coverage parity with required audit areas: `FAIL` (missing: `{{ generated.missing_audit_areas | join: ", " }}`).
+{% endif %}
+{% else %}
+_Checklist data not generated yet. Run `scripts/build-framework-checklist.rb`._
+{% endif %}

@@ -3,6 +3,12 @@ layout: default
 title: Skills
 nav_order: 3
 parent: Tool Guides
+checklist_enabled: true
+checklist_stage: stage-5
+checklist_section: "Stage 5: Tool-Fit Translation"
+checklist_order: 3
+checklist_audit_areas:
+  - tool-loading
 ---
 
 # Skills — Reusable Workflows Without Prompt Repetition

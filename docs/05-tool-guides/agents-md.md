@@ -3,6 +3,12 @@ layout: default
 title: AGENTS.md
 nav_order: 8
 parent: Tool Guides
+checklist_enabled: true
+checklist_stage: stage-5
+checklist_section: "Stage 5: Tool-Fit Translation"
+checklist_order: 8
+checklist_audit_areas:
+  - tool-loading
 ---
 
 # AGENTS.md — The Emerging Standard

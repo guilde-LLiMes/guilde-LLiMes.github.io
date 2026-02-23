@@ -3,6 +3,13 @@ layout: default
 title: Incremental Adoption
 nav_order: 3
 parent: Fundamentals
+checklist_enabled: true
+checklist_stage: stage-1
+checklist_section: "Stage 1: Method Foundation"
+checklist_order: 3
+checklist_audit_areas:
+  - audit-method
+  - maintenance-drift
 ---
 
 # Incremental Adoption

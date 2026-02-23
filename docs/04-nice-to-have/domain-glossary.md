@@ -3,6 +3,13 @@ layout: default
 title: Domain Glossary
 nav_order: 3
 parent: Nice-to-Have
+checklist_enabled: true
+checklist_stage: stage-4
+checklist_section: "Stage 4: Nice-to-Have Artifacts"
+checklist_order: 3
+checklist_audit_areas:
+  - consistency
+  - maintenance-drift
 ---
 
 # Domain Glossary

@@ -3,6 +3,13 @@ layout: default
 title: Architecture Tests
 nav_order: 2
 parent: Nice-to-Have
+checklist_enabled: true
+checklist_stage: stage-4
+checklist_section: "Stage 4: Nice-to-Have Artifacts"
+checklist_order: 2
+checklist_audit_areas:
+  - maintenance-drift
+  - testing-verification
 ---
 
 # Architecture Tests

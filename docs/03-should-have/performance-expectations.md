@@ -3,6 +3,12 @@ layout: default
 title: Performance Expectations
 nav_order: 5
 parent: Should-Have
+checklist_enabled: true
+checklist_stage: stage-3
+checklist_section: "Stage 3: Should-Have Artifacts"
+checklist_order: 5
+checklist_audit_areas:
+  - consistency
 ---
 
 # Performance Expectations

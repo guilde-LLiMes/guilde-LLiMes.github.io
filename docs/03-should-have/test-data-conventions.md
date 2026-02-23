@@ -3,6 +3,13 @@ layout: default
 title: Test Data Conventions
 nav_order: 6
 parent: Should-Have
+checklist_enabled: true
+checklist_stage: stage-3
+checklist_section: "Stage 3: Should-Have Artifacts"
+checklist_order: 6
+checklist_audit_areas:
+  - consistency
+  - testing-verification
 ---
 
 # Test Data Conventions

@@ -3,6 +3,12 @@ layout: default
 title: Cursor
 nav_order: 6
 parent: Tool Guides
+checklist_enabled: true
+checklist_stage: stage-5
+checklist_section: "Stage 5: Tool-Fit Translation"
+checklist_order: 6
+checklist_audit_areas:
+  - tool-loading
 ---
 
 # Cursor — .cursor/rules/*.mdc

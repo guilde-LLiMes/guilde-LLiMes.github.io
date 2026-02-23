@@ -3,6 +3,12 @@ layout: default
 title: Architecture Decision Records
 nav_order: 2
 parent: Should-Have
+checklist_enabled: true
+checklist_stage: stage-3
+checklist_section: "Stage 3: Should-Have Artifacts"
+checklist_order: 2
+checklist_audit_areas:
+  - consistency
 ---
 
 # Architecture Decision Records

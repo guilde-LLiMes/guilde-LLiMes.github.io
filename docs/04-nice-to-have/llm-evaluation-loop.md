@@ -3,6 +3,12 @@ layout: default
 title: LLM Evaluation Loop
 nav_order: 6
 parent: Nice-to-Have
+checklist_enabled: true
+checklist_stage: stage-4
+checklist_section: "Stage 4: Nice-to-Have Artifacts"
+checklist_order: 6
+checklist_audit_areas:
+  - maintenance-drift
 ---
 
 # LLM Evaluation Loop

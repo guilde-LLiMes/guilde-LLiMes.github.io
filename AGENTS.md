@@ -53,6 +53,22 @@ Per-page responsibility contract:
 - Each page should state mission, in-scope content, and out-of-scope content.
 - If a page receives content outside its mission, move that content to the owning page and leave a link.
 
+## Framework Checklist Generation (Must)
+
+`docs/00-introduction/framework-checklist.md` is rendered from generated data, not hand-maintained bullets.
+
+Checklist source model:
+- Contributing docs define checklist metadata in frontmatter (`checklist_enabled`, `checklist_stage`, `checklist_section`, `checklist_order`, `checklist_audit_areas`).
+- Generated file `_data/framework-checklist.generated.yml` is the checklist data source for rendering.
+- Required audit-area coverage lives in `_data/framework-checklist.required-audit-areas.yml`.
+
+Required commands after checklist metadata edits:
+- `scripts/build-framework-checklist.rb`
+- `scripts/validate-framework-checklist-parity.rb`
+
+Validation rule:
+- Do not merge checklist metadata changes when generated data and parity validation are stale or failing.
+
 ## Local Skills Purpose (Must)
 
 Repository-owned skills live in `skills/*/SKILL.md`.

@@ -3,6 +3,12 @@ layout: default
 title: Error Handling
 nav_order: 4
 parent: Should-Have
+checklist_enabled: true
+checklist_stage: stage-3
+checklist_section: "Stage 3: Should-Have Artifacts"
+checklist_order: 4
+checklist_audit_areas:
+  - consistency
 ---
 
 # Error Handling

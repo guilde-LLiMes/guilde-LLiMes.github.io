@@ -77,6 +77,10 @@ Goal: detect missing or unclear guidance, not force one specific project structu
   - Skills/sub-agents/hooks are documented where they are part of team workflow.
 - [ ] Documentation checklist artifact exists and is reachable
   - A project-level checklist page (for example, framework onboarding checklist) is discoverable from primary docs paths.
+- [ ] Generated checklist data exists and is current (if generation workflow is used)
+  - `_data/framework-checklist.generated.yml` is present and matches checklist frontmatter from contributing docs.
+- [ ] Generated checklist parity validation exists (if generation workflow is used)
+  - `scripts/validate-framework-checklist-parity.rb` (or equivalent) validates audit-area coverage and section integrity.
 - [ ] Validation protocol workflow is documented (if applicable)
   - If a validation/debugging protocol skill exists, docs explain when to use it and expected output artifact (`DEBUG.md`).
 - [ ] Skill routing ownership is clear (if applicable)

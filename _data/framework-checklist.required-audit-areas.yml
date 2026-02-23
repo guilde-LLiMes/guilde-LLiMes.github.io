@@ -1,0 +1,15 @@
+required_audit_areas:
+  - key: audit-method
+    label: Audit Method
+  - key: core-context
+    label: Core LLM Context Coverage
+  - key: high-risk
+    label: High-Risk Safety and Reliability Areas
+  - key: testing-verification
+    label: Testing and Verification Coverage
+  - key: consistency
+    label: Consistency and Team Alignment Areas
+  - key: tool-loading
+    label: Tool and Loading Fit
+  - key: maintenance-drift
+    label: Maintenance and Drift Control

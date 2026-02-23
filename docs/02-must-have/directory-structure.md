@@ -3,6 +3,12 @@ layout: default
 title: Directory Structure
 nav_order: 5
 parent: Must-Have
+checklist_enabled: true
+checklist_stage: stage-2
+checklist_section: "Stage 2: Must-Have Artifacts"
+checklist_order: 5
+checklist_audit_areas:
+  - core-context
 ---
 
 # Directory Structure

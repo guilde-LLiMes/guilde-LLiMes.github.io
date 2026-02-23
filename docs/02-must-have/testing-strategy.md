@@ -3,6 +3,13 @@ layout: default
 title: Testing Strategy
 nav_order: 4
 parent: Must-Have
+checklist_enabled: true
+checklist_stage: stage-2
+checklist_section: "Stage 2: Must-Have Artifacts"
+checklist_order: 4
+checklist_audit_areas:
+  - high-risk
+  - testing-verification
 ---
 
 # Testing Strategy

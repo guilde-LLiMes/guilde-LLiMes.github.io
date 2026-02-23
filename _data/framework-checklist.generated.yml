@@ -1,0 +1,354 @@
+---
+generated_at: '2026-02-23T22:15:01Z'
+item_count: 33
+sections:
+- key: stage-1-method-foundation
+  title: 'Stage 1: Method Foundation'
+  stage: stage-1
+  stage_order: 1
+  items:
+  - id: 01-fundamentals.three-tier-model
+    path: docs/01-fundamentals/three-tier-model.md
+    title: Three-Tier Model
+    label: Three-Tier Model guidance is documented and current.
+    stage: stage-1
+    section: 'Stage 1: Method Foundation'
+    order: 1
+    audit_areas:
+    - audit-method
+  - id: 01-fundamentals.token-budgets
+    path: docs/01-fundamentals/token-budgets.md
+    title: Token Budgets
+    label: Token Budgets guidance is documented and current.
+    stage: stage-1
+    section: 'Stage 1: Method Foundation'
+    order: 2
+    audit_areas:
+    - audit-method
+  - id: 01-fundamentals.incremental-adoption
+    path: docs/01-fundamentals/incremental-adoption.md
+    title: Incremental Adoption
+    label: Incremental Adoption guidance is documented and current.
+    stage: stage-1
+    section: 'Stage 1: Method Foundation'
+    order: 3
+    audit_areas:
+    - audit-method
+    - maintenance-drift
+- key: stage-2-must-have-artifacts
+  title: 'Stage 2: Must-Have Artifacts'
+  stage: stage-2
+  stage_order: 2
+  items:
+  - id: 02-must-have.project-scope
+    path: docs/02-must-have/project-scope.md
+    title: Project Scope
+    label: Project Scope guidance is documented and current.
+    stage: stage-2
+    section: 'Stage 2: Must-Have Artifacts'
+    order: 1
+    audit_areas:
+    - core-context
+  - id: 02-must-have.tech-stack
+    path: docs/02-must-have/tech-stack.md
+    title: Tech Stack
+    label: Tech Stack guidance is documented and current.
+    stage: stage-2
+    section: 'Stage 2: Must-Have Artifacts'
+    order: 2
+    audit_areas:
+    - core-context
+  - id: 02-must-have.coding-standards
+    path: docs/02-must-have/coding-standards.md
+    title: Coding Standards
+    label: Coding Standards guidance is documented and current.
+    stage: stage-2
+    section: 'Stage 2: Must-Have Artifacts'
+    order: 3
+    audit_areas:
+    - core-context
+  - id: 02-must-have.testing-strategy
+    path: docs/02-must-have/testing-strategy.md
+    title: Testing Strategy
+    label: Testing Strategy guidance is documented and current.
+    stage: stage-2
+    section: 'Stage 2: Must-Have Artifacts'
+    order: 4
+    audit_areas:
+    - high-risk
+    - testing-verification
+  - id: 02-must-have.directory-structure
+    path: docs/02-must-have/directory-structure.md
+    title: Directory Structure
+    label: Directory Structure guidance is documented and current.
+    stage: stage-2
+    section: 'Stage 2: Must-Have Artifacts'
+    order: 5
+    audit_areas:
+    - core-context
+  - id: 02-must-have.api-contracts
+    path: docs/02-must-have/api-contracts.md
+    title: API Contracts
+    label: API Contracts guidance is documented and current.
+    stage: stage-2
+    section: 'Stage 2: Must-Have Artifacts'
+    order: 6
+    audit_areas:
+    - high-risk
+  - id: 02-must-have.security-basics
+    path: docs/02-must-have/security-basics.md
+    title: Security Basics
+    label: Security Basics guidance is documented and current.
+    stage: stage-2
+    section: 'Stage 2: Must-Have Artifacts'
+    order: 7
+    audit_areas:
+    - high-risk
+  - id: 02-must-have.llm-guardrails
+    path: docs/02-must-have/llm-guardrails.md
+    title: LLM Guardrails
+    label: LLM Guardrails guidance is documented and current.
+    stage: stage-2
+    section: 'Stage 2: Must-Have Artifacts'
+    order: 8
+    audit_areas:
+    - high-risk
+- key: stage-3-should-have-artifacts
+  title: 'Stage 3: Should-Have Artifacts'
+  stage: stage-3
+  stage_order: 3
+  items:
+  - id: 03-should-have.spec-templates
+    path: docs/03-should-have/spec-templates.md
+    title: Spec Templates
+    label: Spec Templates guidance is documented and current.
+    stage: stage-3
+    section: 'Stage 3: Should-Have Artifacts'
+    order: 1
+    audit_areas:
+    - consistency
+  - id: 03-should-have.adrs
+    path: docs/03-should-have/adrs.md
+    title: Architecture Decision Records
+    label: Architecture Decision Records guidance is documented and current.
+    stage: stage-3
+    section: 'Stage 3: Should-Have Artifacts'
+    order: 2
+    audit_areas:
+    - consistency
+  - id: 03-should-have.review-guidelines
+    path: docs/03-should-have/review-guidelines.md
+    title: Review Guidelines
+    label: Review Guidelines guidance is documented and current.
+    stage: stage-3
+    section: 'Stage 3: Should-Have Artifacts'
+    order: 3
+    audit_areas:
+    - consistency
+  - id: 03-should-have.error-handling
+    path: docs/03-should-have/error-handling.md
+    title: Error Handling
+    label: Error Handling guidance is documented and current.
+    stage: stage-3
+    section: 'Stage 3: Should-Have Artifacts'
+    order: 4
+    audit_areas:
+    - consistency
+  - id: 03-should-have.performance-expectations
+    path: docs/03-should-have/performance-expectations.md
+    title: Performance Expectations
+    label: Performance Expectations guidance is documented and current.
+    stage: stage-3
+    section: 'Stage 3: Should-Have Artifacts'
+    order: 5
+    audit_areas:
+    - consistency
+  - id: 03-should-have.test-data-conventions
+    path: docs/03-should-have/test-data-conventions.md
+    title: Test Data Conventions
+    label: Test Data Conventions guidance is documented and current.
+    stage: stage-3
+    section: 'Stage 3: Should-Have Artifacts'
+    order: 6
+    audit_areas:
+    - consistency
+    - testing-verification
+  - id: 03-should-have.documentation-structure
+    path: docs/03-should-have/documentation-structure.md
+    title: Documentation Structure
+    label: Documentation Structure guidance is documented and current.
+    stage: stage-3
+    section: 'Stage 3: Should-Have Artifacts'
+    order: 7
+    audit_areas:
+    - consistency
+- key: stage-4-nice-to-have-artifacts
+  title: 'Stage 4: Nice-to-Have Artifacts'
+  stage: stage-4
+  stage_order: 4
+  items:
+  - id: 04-nice-to-have.ci-quality-gates
+    path: docs/04-nice-to-have/ci-quality-gates.md
+    title: CI Quality Gates
+    label: CI Quality Gates guidance is documented and current.
+    stage: stage-4
+    section: 'Stage 4: Nice-to-Have Artifacts'
+    order: 1
+    audit_areas:
+    - maintenance-drift
+    - testing-verification
+  - id: 04-nice-to-have.architecture-tests
+    path: docs/04-nice-to-have/architecture-tests.md
+    title: Architecture Tests
+    label: Architecture Tests guidance is documented and current.
+    stage: stage-4
+    section: 'Stage 4: Nice-to-Have Artifacts'
+    order: 2
+    audit_areas:
+    - maintenance-drift
+    - testing-verification
+  - id: 04-nice-to-have.domain-glossary
+    path: docs/04-nice-to-have/domain-glossary.md
+    title: Domain Glossary
+    label: Domain Glossary guidance is documented and current.
+    stage: stage-4
+    section: 'Stage 4: Nice-to-Have Artifacts'
+    order: 3
+    audit_areas:
+    - consistency
+    - maintenance-drift
+  - id: 04-nice-to-have.migration-rules
+    path: docs/04-nice-to-have/migration-rules.md
+    title: Migration Rules
+    label: Migration Rules guidance is documented and current.
+    stage: stage-4
+    section: 'Stage 4: Nice-to-Have Artifacts'
+    order: 4
+    audit_areas:
+    - high-risk
+    - maintenance-drift
+  - id: 04-nice-to-have.security-playbook
+    path: docs/04-nice-to-have/security-playbook.md
+    title: Security Playbook
+    label: Security Playbook guidance is documented and current.
+    stage: stage-4
+    section: 'Stage 4: Nice-to-Have Artifacts'
+    order: 5
+    audit_areas:
+    - high-risk
+    - maintenance-drift
+  - id: 04-nice-to-have.llm-evaluation-loop
+    path: docs/04-nice-to-have/llm-evaluation-loop.md
+    title: LLM Evaluation Loop
+    label: LLM Evaluation Loop guidance is documented and current.
+    stage: stage-4
+    section: 'Stage 4: Nice-to-Have Artifacts'
+    order: 6
+    audit_areas:
+    - maintenance-drift
+  - id: 04-nice-to-have.applied-practice-patterns
+    path: docs/04-nice-to-have/applied-practice-patterns.md
+    title: Applied Practice Patterns
+    label: Applied Practice Patterns guidance is documented and current.
+    stage: stage-4
+    section: 'Stage 4: Nice-to-Have Artifacts'
+    order: 7
+    audit_areas:
+    - consistency
+    - maintenance-drift
+- key: stage-5-tool-fit-translation
+  title: 'Stage 5: Tool-Fit Translation'
+  stage: stage-5
+  stage_order: 5
+  items:
+  - id: 05-tool-guides.claude-code
+    path: docs/05-tool-guides/claude-code.md
+    title: Claude Code
+    label: Claude Code guidance is documented and current.
+    stage: stage-5
+    section: 'Stage 5: Tool-Fit Translation'
+    order: 1
+    audit_areas:
+    - tool-loading
+  - id: 05-tool-guides.hooks
+    path: docs/05-tool-guides/hooks.md
+    title: Hooks
+    label: Hooks guidance is documented and current.
+    stage: stage-5
+    section: 'Stage 5: Tool-Fit Translation'
+    order: 2
+    audit_areas:
+    - testing-verification
+    - tool-loading
+  - id: 05-tool-guides.skills
+    path: docs/05-tool-guides/skills.md
+    title: Skills
+    label: Skills guidance is documented and current.
+    stage: stage-5
+    section: 'Stage 5: Tool-Fit Translation'
+    order: 3
+    audit_areas:
+    - tool-loading
+  - id: 05-tool-guides.sub-agents
+    path: docs/05-tool-guides/sub-agents.md
+    title: Sub-Agents
+    label: Sub-Agents guidance is documented and current.
+    stage: stage-5
+    section: 'Stage 5: Tool-Fit Translation'
+    order: 4
+    audit_areas:
+    - tool-loading
+  - id: 05-tool-guides.agent-teams
+    path: docs/05-tool-guides/agent-teams.md
+    title: Agent Teams
+    label: Agent Teams guidance is documented and current.
+    stage: stage-5
+    section: 'Stage 5: Tool-Fit Translation'
+    order: 5
+    audit_areas:
+    - tool-loading
+  - id: 05-tool-guides.cursor
+    path: docs/05-tool-guides/cursor.md
+    title: Cursor
+    label: Cursor guidance is documented and current.
+    stage: stage-5
+    section: 'Stage 5: Tool-Fit Translation'
+    order: 6
+    audit_areas:
+    - tool-loading
+  - id: 05-tool-guides.github-copilot
+    path: docs/05-tool-guides/github-copilot.md
+    title: GitHub Copilot
+    label: GitHub Copilot guidance is documented and current.
+    stage: stage-5
+    section: 'Stage 5: Tool-Fit Translation'
+    order: 7
+    audit_areas:
+    - tool-loading
+  - id: 05-tool-guides.agents-md
+    path: docs/05-tool-guides/agents-md.md
+    title: AGENTS.md
+    label: AGENTS.md guidance is documented and current.
+    stage: stage-5
+    section: 'Stage 5: Tool-Fit Translation'
+    order: 8
+    audit_areas:
+    - tool-loading
+audit_area_coverage:
+- audit-method
+- consistency
+- core-context
+- high-risk
+- maintenance-drift
+- testing-verification
+- tool-loading
+required_audit_areas:
+- audit-method
+- consistency
+- core-context
+- high-risk
+- maintenance-drift
+- testing-verification
+- tool-loading
+missing_audit_areas: []
+coverage_complete: true

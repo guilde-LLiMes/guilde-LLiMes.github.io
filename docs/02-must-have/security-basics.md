@@ -3,6 +3,12 @@ layout: default
 title: Security Basics
 nav_order: 7
 parent: Must-Have
+checklist_enabled: true
+checklist_stage: stage-2
+checklist_section: "Stage 2: Must-Have Artifacts"
+checklist_order: 7
+checklist_audit_areas:
+  - high-risk
 ---
 
 # Security Basics

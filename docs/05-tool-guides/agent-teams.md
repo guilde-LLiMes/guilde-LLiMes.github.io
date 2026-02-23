@@ -3,6 +3,12 @@ layout: default
 title: Agent Teams
 nav_order: 5
 parent: Tool Guides
+checklist_enabled: true
+checklist_stage: stage-5
+checklist_section: "Stage 5: Tool-Fit Translation"
+checklist_order: 5
+checklist_audit_areas:
+  - tool-loading
 ---
 
 # Agent Teams — Let Specialists Collaborate as a System

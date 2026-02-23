@@ -3,6 +3,12 @@ layout: default
 title: Tech Stack
 nav_order: 2
 parent: Must-Have
+checklist_enabled: true
+checklist_stage: stage-2
+checklist_section: "Stage 2: Must-Have Artifacts"
+checklist_order: 2
+checklist_audit_areas:
+  - core-context
 ---
 
 # Tech Stack

@@ -3,6 +3,12 @@ layout: default
 title: Review Guidelines
 nav_order: 3
 parent: Should-Have
+checklist_enabled: true
+checklist_stage: stage-3
+checklist_section: "Stage 3: Should-Have Artifacts"
+checklist_order: 3
+checklist_audit_areas:
+  - consistency
 ---
 
 # Review Guidelines

@@ -14,6 +14,9 @@ Do not enforce a single architecture pattern. Validate clarity, completeness, an
 - LLM-facing docs (for example: `AGENTS.md`, `CLAUDE.md`, `.cursor/rules/*.mdc`, `copilot-instructions.md`)
 - Test file inventory from repository scan (for example: `test/`, `tests/`, `__tests__/`, `e2e/`, `integration/`)
 - Documentation checklist artifact when present (for example: `docs/00-introduction/framework-checklist.md`)
+- Generated checklist data when present (`_data/framework-checklist.generated.yml`)
+- Required audit-area map when present (`_data/framework-checklist.required-audit-areas.yml`)
+- Checklist generation/parity scripts when present (`scripts/build-framework-checklist.rb`, `scripts/validate-framework-checklist-parity.rb`)
 - Skill catalog docs when present (for example: `docs/05-tool-guides/skills.md`, `skills/README.md`)
 - Validation protocol skill when present (`skills/validation-protocol/SKILL.md`)
 - Optional incident reports describing prior instruction failures (for example: `dev/incidents/*.md`)
@@ -33,6 +36,8 @@ Do not enforce a single architecture pattern. Validate clarity, completeness, an
 - Treat unreachable instructions as a first-class gap: rules that exist but are not discoverable from active instruction entrypoints are effectively missing.
 - Require explicit scope and precedence when multiple instruction files exist.
 - Check whether a project-level documentation checklist artifact exists and is discoverable from onboarding paths.
+- If generated checklist data exists, treat it as canonical checklist source and verify it matches frontmatter metadata from contributing docs.
+- If parity validation script exists, run it (or emulate its checks) and include result in findings.
 - When `skills/validation-protocol/SKILL.md` exists, require documentation that explains when to use it and where `DEBUG.md` should live.
 - If a project uses skill routing, require one canonical routing location and links instead of duplicated routing tables.
 - Require section/document responsibility boundaries (mission, in-scope, out-of-scope) where the docs define framework structure.
@@ -69,8 +74,10 @@ Do not enforce a single architecture pattern. Validate clarity, completeness, an
    - Verify Validation Protocol integration path (`validation-protocol` -> `DEBUG.md` + entrypoint link expectations).
    - Verify skill routing ownership and non-duplication (when routing is used).
 11. Run checklist parity pass when framework checklist exists:
-   - Compare `docs/00-introduction/framework-checklist.md` against `references/checklist.md` coverage areas.
-   - Flag mismatches where the framework checklist omits a high-risk audit area.
+   - Compare `_data/framework-checklist.generated.yml` coverage and sections against `references/checklist.md` coverage areas.
+   - Compare `_data/framework-checklist.generated.yml` against frontmatter metadata in contributing docs.
+   - Run `scripts/validate-framework-checklist-parity.rb` when available and capture pass/fail evidence.
+   - Flag mismatches where generated checklist coverage omits a high-risk audit area.
 12. Run responsibility-overlap pass:
    - Detect duplicate full-guidance blocks across section branches.
    - Prefer one canonical owner page plus links from non-owner pages.
@@ -107,6 +114,7 @@ Return findings in this order:
 7. Framework checklist parity summary (when applicable):
    - parity status (`aligned` or `drifted`)
    - drift evidence and minimal fix
+   - parity script result (`pass` or `fail`) when script exists
 8. Responsibility overlap summary:
    - overlap status (`clear ownership` or `overlap detected`)
    - duplicate areas and canonical-owner recommendation

@@ -13,14 +13,14 @@ Do not enforce a single architecture pattern. Validate clarity, completeness, an
 - Repository root
 - LLM-facing docs (for example: `AGENTS.md`, `CLAUDE.md`, `.cursor/rules/*.mdc`, `copilot-instructions.md`)
 - Test file inventory from repository scan (for example: `test/`, `tests/`, `__tests__/`, `e2e/`, `integration/`)
-- Documentation checklist artifact when present (for example: `docs/00-introduction/framework-checklist.md`)
-- Generated checklist data when present (`_data/framework-checklist-generated.yml`)
-- Required audit-area map when present (`_data/framework-checklist.required-audit-areas.yml`)
+- Documentation checklist artifact when present (project-level checklist page used for onboarding/adoption)
+- Generated checklist data artifact when present (machine-readable checklist source used for rendering or validation)
+- Required audit-area map when present (project policy file listing required checklist audit areas)
 - Skill catalog docs when present (for example: `docs/05-tool-guides/skills.md`, `skills/README.md`)
 - Validation protocol skill when present (`skills/validation-protocol/SKILL.md`)
 - Optional incident reports describing prior instruction failures (for example: `dev/incidents/*.md`)
 - Optional mode flag: `--all` (return full findings list instead of top 3-5)
-- `references/checklist.md`
+- Skill-local checklist reference (`references/checklist.md`)
 
 ## Audit Rules
 
@@ -72,7 +72,7 @@ Do not enforce a single architecture pattern. Validate clarity, completeness, an
    - Verify Validation Protocol integration path (`validation-protocol` -> `DEBUG.md` + entrypoint link expectations).
    - Verify skill routing ownership and non-duplication (when routing is used).
 11. Run checklist parity pass when framework checklist exists:
-   - Compare `_data/framework-checklist-generated.yml` coverage and sections against core audit areas in `_data/framework-checklist.required-audit-areas.yml`.
+   - Compare generated checklist data coverage and sections against core audit areas in the required audit-area map.
    - Flag mismatches where generated checklist coverage omits a required core audit area.
 12. Run responsibility-overlap pass:
    - Detect duplicate full-guidance blocks across section branches.

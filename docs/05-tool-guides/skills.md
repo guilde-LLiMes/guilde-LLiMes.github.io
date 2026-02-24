@@ -5,7 +5,7 @@ nav_order: 3
 parent: Tool Guides
 checklist_enabled: true
 checklist_stage: stage-5
-checklist_section: "Stage 5: Tool-Fit Translation"
+checklist_section: "Tool-Fit Checklist"
 checklist_order: 3
 checklist_audit_areas:
   - tool-loading
@@ -54,6 +54,13 @@ Codex supports reusable skills loaded from a skills directory and invoked when t
 
 Use Codex skills for structured workflows that should stay consistent across sessions, especially for repository-specific checks and conventions.
 
+In this repository, the primary workflow is the `llimes-*` pair:
+
+1. `llimes-audit` for evidence-based documentation gap detection.
+2. `llimes-knowledge` for resolving audit findings into artifact planning and document-boundary clarity.
+
+Project-specific skill details and install commands live in [Skills](../06-skills/index.md).
+
 ## Easy Start: Skill Builder Pattern
 
 Many coding-agent setups include a `skill-builder` skill (or equivalent template workflow). Use it first to bootstrap your initial skill set.
@@ -70,7 +77,7 @@ These give immediate value with low setup complexity.
 
 If your project uses task-to-skill routing, keep that map in one canonical operations page and link to it from other docs instead of repeating the table.
 
-If skill auto-selection is weak in your tool, invoke skills explicitly by name and include a short task cue (for example, "run `llm-doc-audit` on current docs").
+If skill auto-selection is weak in your tool, invoke skills explicitly by name and include a short task cue (for example, "run `llimes-audit` on current docs").
 
 ## Discovering Skills
 

@@ -13,10 +13,12 @@ This repository keeps reusable skills under `skills/`.
 
 ```
 skills/
-  llm-doc-audit/
+  llimes-audit/
     SKILL.md
     references/
       checklist.md
+  llimes-knowledge/
+    SKILL.md
   validation-protocol/
     SKILL.md
   playwright-doc-bootstrap/
@@ -39,6 +41,7 @@ skills/
 
 ## Current Intent
 
-- `llm-doc-audit`: audit LLM-facing docs for missing, unclear, or outdated guidance.
+- `llimes-audit`: audit LLM-facing docs for missing, unclear, or outdated guidance.
+- `llimes-knowledge`: provide stage-based documentation guidance and ownership planning.
 - `validation-protocol`: generate/refresh `DEBUG.md` as an evidence-backed runtime debugging and verification contract.
 - `playwright-doc-bootstrap`: detect Playwright/testing-context gaps, generate target docs, and wire those docs into LLM instruction entrypoints.

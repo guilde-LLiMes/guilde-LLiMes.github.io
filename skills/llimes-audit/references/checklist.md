@@ -63,7 +63,7 @@ Goal: detect missing or unclear guidance, not force one specific project structu
 - [ ] Documentation map is understandable
   - LLM can discover where rules live and which document is authoritative.
 - [ ] Section/document responsibilities are declared
-  - Section index pages or canonical docs state mission/in-scope/out-of-scope boundaries.
+  - Section index pages or canonical docs make clear what each page owns and where overlap is avoided.
 - [ ] Cross-document ownership is non-overlapping
   - The same requirement is not repeated as full guidance across multiple pages without a declared source of truth.
 
@@ -78,9 +78,7 @@ Goal: detect missing or unclear guidance, not force one specific project structu
 - [ ] Documentation checklist artifact exists and is reachable
   - A project-level checklist page (for example, framework onboarding checklist) is discoverable from primary docs paths.
 - [ ] Generated checklist data exists and is current (if generation workflow is used)
-  - `_data/framework-checklist.generated.yml` is present and matches checklist frontmatter from contributing docs.
-- [ ] Generated checklist parity validation exists (if generation workflow is used)
-  - `scripts/validate-framework-checklist-parity.rb` (or equivalent) validates audit-area coverage and section integrity.
+  - Generated checklist data is present and reflects checklist-enabled source docs.
 - [ ] Validation protocol workflow is documented (if applicable)
   - If a validation/debugging protocol skill exists, docs explain when to use it and expected output artifact (`DEBUG.md`).
 - [ ] Skill routing ownership is clear (if applicable)

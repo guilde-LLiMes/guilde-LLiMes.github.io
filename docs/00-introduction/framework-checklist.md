@@ -30,16 +30,16 @@ Use this page when you need to align a team quickly, onboard a project, or audit
 
 ## Whole-Project Checklist
 
-This checklist is generated from checklist frontmatter metadata in source docs.
-
 {% include components/framework-checklist-generated.html %}
 
-## Source Of Truth
+## Checklist Execution Flow
 
-- Checklist metadata lives in frontmatter of contributing docs (`checklist_*` fields).
-- Generated data file: `_data/framework-checklist.generated.yml`.
-- Rebuild command: `scripts/build-framework-checklist.rb`.
-- Parity validation command: `scripts/validate-framework-checklist-parity.rb`.
+Use skills to turn checklist items into concrete action:
+
+1. `llimes-audit`: verify coverage and highlight missing or weak artifacts that block reliable LLM output.
+2. `llimes-knowledge`: expand audit findings into concrete artifact planning and document responsibility boundaries.
+3. `validation-protocol`: add reproducible runtime verification guidance in `DEBUG.md` when checklist items depend on runtime behavior.
+4. `playwright-doc-bootstrap`: add Playwright testing documentation when E2E guidance is missing.
 
 ## Traceability Pattern (Use This Table)
 
@@ -49,16 +49,14 @@ This checklist is generated from checklist frontmatter metadata in source docs.
 | Wrong stack/library suggestions | Tech Stack | Review gate + type/lint failures |
 | Inconsistent file placement | Directory Structure | Path lint/check script |
 
-## Correlation With `llm-doc-audit`
+## Related Skills
 
-Use `llm-doc-audit` as the verification pass for this checklist:
+- `llimes-audit`: audits documentation coverage and highlights the highest-risk gaps.
+- `llimes-knowledge`: helps plan artifact rollout and document responsibility boundaries.
+- `validation-protocol`: builds/refreshes runtime validation guidance in `DEBUG.md`.
+- `playwright-doc-bootstrap`: adds Playwright-specific testing documentation when E2E coverage is missing.
 
-- Run default mode for top 3-5 critical gaps.
-- Run `--all` when you need full coverage and complete gap list.
-- Treat each `High` gap as a checklist blocker.
-- Update this checklist status only after the gap has file-based evidence of closure.
-
-The checklist areas above intentionally mirror `skills/llm-doc-audit/references/checklist.md` so manual review and skill-based audit produce the same result.
+Full skill catalog and installation steps: [Skills](../06-skills/index.md).
 
 ## References
 
@@ -66,4 +64,4 @@ The checklist areas above intentionally mirror `skills/llm-doc-audit/references/
 - [Incremental Adoption](../01-fundamentals/incremental-adoption.md)
 - [AGENTS.md](../05-tool-guides/agents-md.md)
 - [Hooks](../05-tool-guides/hooks.md)
-- [Skills](../05-tool-guides/skills.md)
+- [Skills](../06-skills/index.md)

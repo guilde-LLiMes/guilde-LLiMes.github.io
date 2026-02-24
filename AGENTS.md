@@ -53,13 +53,27 @@ Per-page responsibility contract:
 - Each page should state mission, in-scope content, and out-of-scope content.
 - If a page receives content outside its mission, move that content to the owning page and leave a link.
 
+## Project Decisions From Current Iteration (Must)
+
+These are active repository decisions and should be treated as default behavior.
+
+- Skill naming: use `llimes-*` prefix for the documentation-intelligence skill family.
+- Core skill flow: `llimes-audit` first, then `llimes-knowledge` only when audit findings require more context, ownership mapping, or artifact planning.
+- Revalidation loop: after applying documentation changes, rerun `llimes-audit` to confirm the highest-impact gaps are closed.
+- Runtime verification follow-up: use `validation-protocol` when findings require executable debugging/verification guidance in `DEBUG.md`.
+- Keep generated checklist content user-facing: `framework-checklist.md` should present actionable project-documentation checklist guidance, not developer implementation details.
+- Keep developer/infrastructure details out of user-facing narrative pages when possible (generation scripts, parity internals, data pipeline notes). Put those in AGENTS/process docs/frontmatter as appropriate.
+- Time framing rule: avoid calendar-language rollout guidance (months/weeks). Use stage-based progression language.
+- Single source rule for skill catalog and install commands: keep canonical details in `docs/06-skills/index.md`; other docs should link instead of duplicating.
+- Skill portability rule: repository-local scripts can support this repo, but skill behavior should remain usable in external projects without requiring this repo's internal generators.
+
 ## Framework Checklist Generation (Must)
 
 `docs/00-introduction/framework-checklist.md` is rendered from generated data, not hand-maintained bullets.
 
 Checklist source model:
 - Contributing docs define checklist metadata in frontmatter (`checklist_enabled`, `checklist_stage`, `checklist_section`, `checklist_order`, `checklist_audit_areas`).
-- Generated file `_data/framework-checklist.generated.yml` is the checklist data source for rendering.
+- Generated file `_data/framework-checklist-generated.yml` is the checklist data source for rendering.
 - Required audit-area coverage lives in `_data/framework-checklist.required-audit-areas.yml`.
 
 Required commands after checklist metadata edits:
@@ -79,6 +93,7 @@ In this project, `skills/` is primarily product content being authored and maint
 - Run a local skill workflow only when explicitly requested, or when validating that skill's behavior.
 
 Current local skills:
-- `llm-doc-audit` (`skills/llm-doc-audit/SKILL.md`)
+- `llimes-audit` (`skills/llimes-audit/SKILL.md`)
+- `llimes-knowledge` (`skills/llimes-knowledge/SKILL.md`)
 - `validation-protocol` (`skills/validation-protocol/SKILL.md`)
 - `playwright-doc-bootstrap` (`skills/playwright-doc-bootstrap/SKILL.md`)

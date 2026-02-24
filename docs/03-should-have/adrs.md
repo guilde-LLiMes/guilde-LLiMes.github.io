@@ -5,7 +5,7 @@ nav_order: 2
 parent: Should-Have
 checklist_enabled: true
 checklist_stage: stage-3
-checklist_section: "Stage 3: Should-Have Artifacts"
+checklist_section: "Should-Have Artifact Checklist"
 checklist_order: 2
 checklist_audit_areas:
   - consistency

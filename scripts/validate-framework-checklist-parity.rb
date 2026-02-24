@@ -4,7 +4,7 @@
 require 'yaml'
 
 ROOT = File.expand_path('..', __dir__)
-GENERATED_PATH = File.join(ROOT, '_data', 'framework-checklist.generated.yml')
+GENERATED_PATH = File.join(ROOT, '_data', 'framework-checklist-generated.yml')
 REQUIRED_AREAS_PATH = File.join(ROOT, '_data', 'framework-checklist.required-audit-areas.yml')
 
 unless File.exist?(GENERATED_PATH)
@@ -22,7 +22,17 @@ generated = YAML.safe_load(File.read(GENERATED_PATH), aliases: true) || {}
 required = YAML.safe_load(File.read(REQUIRED_AREAS_PATH), aliases: true) || {}
 
 required_keys = Array(required['required_audit_areas']).map { |e| e['key'].to_s }.uniq.sort
-covered_keys = Array(generated['audit_area_coverage']).map(&:to_s).uniq.sort
+covered_keys = Array(generated['audit_area_coverage']).map(&:to_s).uniq
+if covered_keys.empty?
+  derived = []
+  Array(generated['sections']).each do |section|
+    Array(section['items']).each do |item|
+      derived.concat(Array(item['audit_areas']).map(&:to_s))
+    end
+  end
+  covered_keys = derived.uniq
+end
+covered_keys.sort!
 missing = required_keys - covered_keys
 
 sections = Array(generated['sections'])

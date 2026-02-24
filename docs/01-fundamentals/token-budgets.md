@@ -3,12 +3,6 @@ layout: default
 title: Token Budgets
 nav_order: 2
 parent: Fundamentals
-checklist_enabled: true
-checklist_stage: stage-1
-checklist_section: "Stage 1: Method Foundation"
-checklist_order: 2
-checklist_audit_areas:
-  - audit-method
 ---
 
 # Token Budgets

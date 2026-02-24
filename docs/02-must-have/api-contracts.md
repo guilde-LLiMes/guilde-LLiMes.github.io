@@ -5,7 +5,7 @@ nav_order: 6
 parent: Must-Have
 checklist_enabled: true
 checklist_stage: stage-2
-checklist_section: "Stage 2: Must-Have Artifacts"
+checklist_section: "Must-Have Artifact Checklist"
 checklist_order: 6
 checklist_audit_areas:
   - high-risk

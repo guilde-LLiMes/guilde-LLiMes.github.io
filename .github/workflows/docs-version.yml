@@ -64,21 +64,31 @@ jobs:
             mv "${config_file}.tmp" "$config_file"
           fi
 
+      - name: Regenerate framework checklist data
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -x scripts/build-framework-checklist.rb ]]; then
+            scripts/build-framework-checklist.rb
+          elif [[ -f scripts/build-framework-checklist.rb ]]; then
+            ruby scripts/build-framework-checklist.rb
+          fi
+
       - name: Commit and push if changed
         shell: bash
         run: |
           set -euo pipefail
 
-          if git diff --quiet -- _config.yml; then
+          if git diff --quiet -- _config.yml _data/framework-checklist-generated.yml; then
             echo "No changes to commit."
             exit 0
           fi
 
           echo "Changed files:"
-          git diff --name-only -- _config.yml
+          git diff --name-only -- _config.yml _data/framework-checklist-generated.yml
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _config.yml
-          git commit -m "chore(docs): bump docs_version [skip ci]"
+          git add _config.yml _data/framework-checklist-generated.yml
+          git commit -m "chore(docs): bump docs_version and refresh checklist data [skip ci]"
           git push

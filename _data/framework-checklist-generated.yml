@@ -1,0 +1,117 @@
+---
+generated_at: '2026-02-24T00:41:42Z'
+sections:
+- title: Must-Have Artifact Checklist
+  items:
+  - title: Project Scope
+    path: docs/02-must-have/project-scope.md
+    label: Project Scope guidance is documented and current.
+  - title: Tech Stack
+    path: docs/02-must-have/tech-stack.md
+    label: Tech Stack guidance is documented and current.
+  - title: Coding Standards
+    path: docs/02-must-have/coding-standards.md
+    label: Coding Standards guidance is documented and current.
+  - title: Testing Strategy
+    path: docs/02-must-have/testing-strategy.md
+    label: Testing Strategy guidance is documented and current.
+  - title: Directory Structure
+    path: docs/02-must-have/directory-structure.md
+    label: Directory Structure guidance is documented and current.
+  - title: API Contracts
+    path: docs/02-must-have/api-contracts.md
+    label: API Contracts guidance is documented and current.
+  - title: Security Basics
+    path: docs/02-must-have/security-basics.md
+    label: Security Basics guidance is documented and current.
+  - title: LLM Guardrails
+    path: docs/02-must-have/llm-guardrails.md
+    label: LLM Guardrails guidance is documented and current.
+- title: Should-Have Artifact Checklist
+  items:
+  - title: Spec Templates
+    path: docs/03-should-have/spec-templates.md
+    label: Spec Templates guidance is documented and current.
+  - title: Architecture Decision Records
+    path: docs/03-should-have/adrs.md
+    label: Architecture Decision Records guidance is documented and current.
+  - title: Review Guidelines
+    path: docs/03-should-have/review-guidelines.md
+    label: Review Guidelines guidance is documented and current.
+  - title: Error Handling
+    path: docs/03-should-have/error-handling.md
+    label: Error Handling guidance is documented and current.
+  - title: Performance Expectations
+    path: docs/03-should-have/performance-expectations.md
+    label: Performance Expectations guidance is documented and current.
+  - title: Test Data Conventions
+    path: docs/03-should-have/test-data-conventions.md
+    label: Test Data Conventions guidance is documented and current.
+  - title: Documentation Structure
+    path: docs/03-should-have/documentation-structure.md
+    label: Documentation Structure guidance is documented and current.
+- title: Nice-to-Have Artifact Checklist
+  items:
+  - title: CI Quality Gates
+    path: docs/04-nice-to-have/ci-quality-gates.md
+    label: CI Quality Gates guidance is documented and current.
+  - title: Architecture Tests
+    path: docs/04-nice-to-have/architecture-tests.md
+    label: Architecture Tests guidance is documented and current.
+  - title: Domain Glossary
+    path: docs/04-nice-to-have/domain-glossary.md
+    label: Domain Glossary guidance is documented and current.
+  - title: Migration Rules
+    path: docs/04-nice-to-have/migration-rules.md
+    label: Migration Rules guidance is documented and current.
+  - title: Security Playbook
+    path: docs/04-nice-to-have/security-playbook.md
+    label: Security Playbook guidance is documented and current.
+  - title: LLM Evaluation Loop
+    path: docs/04-nice-to-have/llm-evaluation-loop.md
+    label: LLM Evaluation Loop guidance is documented and current.
+  - title: Applied Practice Patterns
+    path: docs/04-nice-to-have/applied-practice-patterns.md
+    label: Applied Practice Patterns guidance is documented and current.
+- title: Tool-Fit Checklist
+  items:
+  - title: Claude Code
+    path: docs/05-tool-guides/claude-code.md
+    label: Claude Code guidance is documented and current.
+  - title: Hooks
+    path: docs/05-tool-guides/hooks.md
+    label: Hooks guidance is documented and current.
+  - title: Skills
+    path: docs/05-tool-guides/skills.md
+    label: Skills guidance is documented and current.
+  - title: Sub-Agents
+    path: docs/05-tool-guides/sub-agents.md
+    label: Sub-Agents guidance is documented and current.
+  - title: Agent Teams
+    path: docs/05-tool-guides/agent-teams.md
+    label: Agent Teams guidance is documented and current.
+  - title: Cursor
+    path: docs/05-tool-guides/cursor.md
+    label: Cursor guidance is documented and current.
+  - title: GitHub Copilot
+    path: docs/05-tool-guides/github-copilot.md
+    label: GitHub Copilot guidance is documented and current.
+  - title: AGENTS.md
+    path: docs/05-tool-guides/agents-md.md
+    label: AGENTS.md guidance is documented and current.
+audit_area_coverage:
+- consistency
+- core-context
+- high-risk
+- maintenance-drift
+- testing-verification
+- tool-loading
+required_audit_areas:
+- consistency
+- core-context
+- high-risk
+- maintenance-drift
+- testing-verification
+- tool-loading
+missing_audit_areas: []
+coverage_complete: true

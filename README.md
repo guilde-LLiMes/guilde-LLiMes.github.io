@@ -57,7 +57,7 @@ If you want to improve this framework, use the [Contributing Guide](CONTRIBUTING
 - [Should-Have Guidelines](docs/03-should-have/index.md)
 - [Nice-to-Have Guidelines](docs/04-nice-to-have/index.md)
 - [Tool Guides](docs/05-tool-guides/index.md)
-- [Skills](skills/README.md)
+- [Skills](docs/06-skills/index.md)
 - [Glossary](glossary.md)
 - [Contributing Guide](CONTRIBUTING.md)
 

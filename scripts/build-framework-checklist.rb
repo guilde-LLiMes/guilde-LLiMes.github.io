@@ -6,7 +6,7 @@ require 'time'
 
 ROOT = File.expand_path('..', __dir__)
 DOC_GLOB = File.join(ROOT, 'docs', '**', '*.md')
-OUTPUT_PATH = File.join(ROOT, '_data', 'framework-checklist.generated.yml')
+OUTPUT_PATH = File.join(ROOT, '_data', 'framework-checklist-generated.yml')
 REQUIRED_AREAS_PATH = File.join(ROOT, '_data', 'framework-checklist.required-audit-areas.yml')
 
 STAGE_ORDER = {
@@ -23,13 +23,6 @@ def load_frontmatter(path)
   return {} unless match
 
   YAML.safe_load(match[1], aliases: true) || {}
-end
-
-def doc_id(path)
-  path
-    .sub(%r{^docs/}, '')
-    .sub(/\.md$/, '')
-    .tr('/', '.')
 end
 
 def default_label(title)
@@ -57,14 +50,13 @@ Dir.glob(DOC_GLOB).sort.each do |abs_path|
   audit_areas = Array(fm['checklist_audit_areas']).map(&:to_s).uniq.sort
 
   items << {
-    'id' => doc_id(rel_path),
     'path' => rel_path,
     'title' => title,
     'label' => fm['checklist_label'] || default_label(title),
-    'stage' => fm['checklist_stage'] || 'stage-unknown',
     'section' => fm['checklist_section'] || 'Uncategorized',
-    'order' => order,
-    'audit_areas' => audit_areas
+    'audit_areas' => audit_areas,
+    '_stage' => fm['checklist_stage'] || 'stage-unknown',
+    '_order' => order
   }
 end
 
@@ -72,26 +64,31 @@ section_buckets = Hash.new { |h, k| h[k] = [] }
 items.each { |item| section_buckets[item['section']] << item }
 
 sections = section_buckets.map do |section_name, section_items|
-  sorted_items = section_items.sort_by { |item| [item['order'].to_i, item['title']] }
-  stage = sorted_items.first['stage']
+  sorted_items = section_items.sort_by { |item| [item['_order'].to_i, item['title']] }
+  stage = sorted_items.first['_stage']
+  clean_items = sorted_items.map do |item|
+    {
+      'title' => item['title'],
+      'path' => item['path'],
+      'label' => item['label']
+    }
+  end
 
   {
-    'key' => section_name.downcase.gsub(/[^a-z0-9]+/, '-').gsub(/^-|-$/, ''),
     'title' => section_name,
-    'stage' => stage,
-    'stage_order' => STAGE_ORDER.fetch(stage, 999),
-    'items' => sorted_items
+    '_stage_order' => STAGE_ORDER.fetch(stage, 999),
+    'items' => clean_items
   }
 end
 
-sections.sort_by! { |s| [s['stage_order'], s['title']] }
+sections.sort_by! { |s| [s['_stage_order'], s['title']] }
+sections.each { |s| s.delete('_stage_order') }
 
 covered_area_keys = items.flat_map { |i| i['audit_areas'] }.uniq.sort
 missing_area_keys = required_area_keys - covered_area_keys
 
 payload = {
   'generated_at' => Time.now.utc.iso8601,
-  'item_count' => items.length,
   'sections' => sections,
   'audit_area_coverage' => covered_area_keys,
   'required_audit_areas' => required_area_keys,

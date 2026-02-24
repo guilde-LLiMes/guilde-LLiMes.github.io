@@ -1,6 +1,4 @@
 required_audit_areas:
-  - key: audit-method
-    label: Audit Method
   - key: core-context
     label: Core LLM Context Coverage
   - key: high-risk

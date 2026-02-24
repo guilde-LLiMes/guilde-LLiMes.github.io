@@ -29,8 +29,7 @@ source_links:
 exclude:
   - AGENTS.md
   - CLAUDE.md
-  - SKILL.md
-  - SKILL-VALIDATION-CHECKLIST.md
+  - skills/
   - input.md
   - raw-input/
   - CHANGELOG.md

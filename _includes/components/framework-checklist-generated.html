@@ -1,4 +1,4 @@
-{% assign generated = site.data.framework-checklist.generated %}
+{% assign generated = site.data["framework-checklist-generated"] %}
 {% if generated and generated.sections %}
 {% for section in generated.sections %}
 ### {{ section.title }}
@@ -9,11 +9,6 @@
 {% endfor %}
 
 {% endfor %}
-{% if generated.coverage_complete == true %}
-Checklist coverage parity with required audit areas: `PASS`.
 {% else %}
-Checklist coverage parity with required audit areas: `FAIL` (missing: `{{ generated.missing_audit_areas | join: ", " }}`).
-{% endif %}
-{% else %}
-_Checklist data not generated yet. Run `scripts/build-framework-checklist.rb`._
+_Checklist content is currently unavailable._
 {% endif %}

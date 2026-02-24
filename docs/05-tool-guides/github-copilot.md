@@ -5,7 +5,7 @@ nav_order: 7
 parent: Tool Guides
 checklist_enabled: true
 checklist_stage: stage-5
-checklist_section: "Stage 5: Tool-Fit Translation"
+checklist_section: "Tool-Fit Checklist"
 checklist_order: 7
 checklist_audit_areas:
   - tool-loading

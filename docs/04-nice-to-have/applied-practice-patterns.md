@@ -6,7 +6,7 @@ parent: Nice-to-Have
 has_children: true
 checklist_enabled: true
 checklist_stage: stage-4
-checklist_section: "Stage 4: Nice-to-Have Artifacts"
+checklist_section: "Nice-to-Have Artifact Checklist"
 checklist_order: 7
 checklist_audit_areas:
   - consistency

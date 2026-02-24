@@ -5,7 +5,7 @@ nav_order: 5
 parent: Nice-to-Have
 checklist_enabled: true
 checklist_stage: stage-4
-checklist_section: "Stage 4: Nice-to-Have Artifacts"
+checklist_section: "Nice-to-Have Artifact Checklist"
 checklist_order: 5
 checklist_audit_areas:
   - high-risk

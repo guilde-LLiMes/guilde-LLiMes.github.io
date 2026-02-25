@@ -6,7 +6,45 @@ author: kirby
 tags: [methodology, reference, software-development]
 ---
 
-A collected list of "Driven Development" styles documented in software development literature and blogs. Sources: [Wikipedia](https://en.wikipedia.org/wiki/List_of_software_development_philosophies)
+# “Driven Development” styles
+
+A collected list of "Driven Development" styles documented in software development literature and blogs.
+
+## Methodology and limits
+
+To keep this list objective, each style is included only when at least one of the following is true:
+
+- It appears in a canonical source (foundational book, standards/governance body, or well-established engineering reference).
+- It is a clearly named and repeated practitioner pattern with recognizable workflow impact.
+- It is a satirical/anti-pattern label that teams use as a warning signal (explicitly marked as such).
+
+Evidence labels in this post:
+
+- **High**: canonical/foundational source(s) exist.
+- **Medium**: credible practitioner sources and repeated industry use.
+- **Low**: niche term, mostly informal usage, or mostly satirical usage.
+
+Practicality score (0-100) is directional and based on five equal factors:
+
+- Learning curve/cognitive overhead
+- Tooling and ecosystem support
+- Measurable ROI potential
+- Team-size fit
+- Domain-fit breadth
+
+Popularity note: unlike languages/frameworks, there is no single authoritative adoption dataset for most "X-driven" labels. Popularity here is relative, using available proxies.
+
+Category assignment rules in this post:
+
+- **Widely accepted, production-grade**: generally proactive practices with broad applicability and practical score typically in the upper range.
+- **Common but contextual or niche**: useful approaches with narrower fit, higher tradeoffs, or weaker/less-unified evidence.
+- **Mostly tongue-in-cheek / soft practices**: anti-pattern labels or mostly satirical terms used as cautionary language.
+
+Score interpretation:
+
+- **80-100**: strong default candidate in many teams.
+- **60-79**: useful in the right context; validate fit before standardizing.
+- **0-59**: usually situational or cautionary, not a general default.
 
 ## Core "Driven Development" styles
 
@@ -41,24 +79,26 @@ Various blogs, talks, and glossaries mention additional xDD labels, often semi-j
 
 ## Quick reference table
 
-| Name                               | Typical acronym | Main driver/focus                    |
-|------------------------------------|-----------------|--------------------------------------|
-| Test-Driven Development            | TDD             | Automated tests first                |
-| Behavior-Driven Development        | BDD             | Observable behavior & examples       |
-| Feature-Driven Development         | FDD             | Small, client-valued features        |
-| Domain-Driven Design/Development   | DDD             | Domain model & ubiquitous language   |
-| Data-Driven Development            | DDD             | Real-world data and metrics          |
-| Event-Driven Development           | EDD             | Events and asynchronous messaging    |
-| Acceptance Test-Driven Development | ATDD            | Acceptance criteria/tests            |
-| Continuous Test-Driven Development | CTDD            | Continuous TDD practice              |
-| Spec/Specification-Driven Dev      | SDD             | Detailed specs & examples            |
-| Design-Driven Development          | D3              | Up-front and ongoing design          |
-| User-Driven Development            | UDD             | User feedback and involvement        |
-| Value-Driven Development           | VDD             | Business value and outcomes          |
-| Configuration-Driven Development   | CDD             | Config/metadata                      |
-| Readme-Driven Development          | RDD             | README/spec as contract              |
-| Bug-Driven Development             | BgDD            | Fixing reported bugs                 |
-| Active-Admin-Driven Development    | AADD            | Admin tooling constraints            |
+| Name                               | Typical acronym            | First codified (approx.) | Main driver/focus                    | Evidence | Score confidence | Practicality (0-100) |
+|------------------------------------|----------------------------|--------------------------|--------------------------------------|----------|------------------|----------------------|
+| Test-Driven Development            | TDD                        | 2000-2002                | Automated tests first                | High     | High             | 86                   |
+| Behavior-Driven Development        | BDD                        | 2003-2006                | Observable behavior and examples     | High     | High             | 82                   |
+| Feature-Driven Development         | FDD                        | 1997-1999                | Small, client-valued features        | Medium   | Medium           | 60                   |
+| Domain-Driven Design/Development   | DDD                        | 2003                     | Domain model and ubiquitous language | High     | High             | 78                   |
+| Data-Driven Development            | DDD (acronym collision)    | 2007-2009                | Real-world data and metrics          | Medium   | Medium           | 76                   |
+| Event-Driven Development           | EDD                        | ~2002                    | Events and asynchronous messaging    | Medium   | Medium           | 70                   |
+| Acceptance Test-Driven Development | ATDD                       | 2003-2004                | Acceptance criteria and tests        | High     | High             | 74                   |
+| Continuous Test-Driven Development | CTDD                       | ~2013                    | Continuous TDD practice              | Medium   | Medium           | 66                   |
+| Spec/Specification-Driven Dev      | SDD                        | 2004+                    | Detailed specs and examples          | Medium   | Medium           | 74                   |
+| Design-Driven Development          | D3                         | 2005-2008                | Up-front and ongoing design          | Low      | Low              | 55                   |
+| User-Driven Development            | UDD                        | 2000s                    | User feedback and involvement        | Medium   | Medium           | 68                   |
+| Value-Driven Development           | VDD                        | 2000s                    | Business value and outcomes          | Medium   | Medium           | 67                   |
+| Configuration-Driven Development   | CDD                        | 2017-2021                | Config and metadata                  | Medium   | Medium           | 62                   |
+| Readme-Driven Development          | RDD                        | 2010                     | README/spec as contract              | Medium   | Medium           | 72                   |
+| Bug-Driven Development             | BgDD                       | 2000s (documented)       | Work dominated by bug reports        | Low      | High             | 25                   |
+| Active-Admin-Driven Development    | AADD                       | 2010s                    | Admin tooling constraints            | Low      | Low              | 40                   |
+
+Satirical/anti-pattern entries in this table are included as cautionary labels, not as recommended primary methods.
 
 Here’s a concise map of the "Driven Development" styles by **seriousness** and **where they sit in the delivery flow**.
 
@@ -91,4 +131,3 @@ Here’s a concise map of the "Driven Development" styles by **seriousness** and
 - **Bug-Driven Development (BgDD)**: Work dictated by bug queue rather than roadmap.  
 - **Active-Admin-Driven Development (AADD)** and similar: Domain ends up shaped by the chosen admin / scaffolding tool rather than the other way around.  
 - **"Story-Driven", "Example-Driven", etc.**: Usually just local labels for flavors of BDD/ATDD rather than distinct methods.
-

@@ -4,7 +4,6 @@ layout: post
 date: 2026-02-24
 author: kirby
 tags: [announcement, introduction]
-permalink: /posts/2026/02/24/announcing-llimes/
 ---
 
 **TL;DR:** guide-LLiMes is a framework for writing LLM coding guidelines that models actually follow. Instead of prompting tricks, it uses structured documentation with tiered rules (Must/Should/Nice) that you expand based on real failures.

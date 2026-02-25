@@ -15,6 +15,8 @@ nav_external_links:
 
 heading_anchors: true
 search_enabled: true
+mermaid:
+  version: "11.12.3"
 
 back_to_top: true
 back_to_top_text: "Back to top"
@@ -26,10 +28,19 @@ source_links:
   github_raw_base: https://raw.githubusercontent.com
   branch: main
 
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /posts/:title/
+
 exclude:
   - AGENTS.md
   - CLAUDE.md
   - skills/
+  - research/
   - input.md
   - raw-input/
   - CHANGELOG.md

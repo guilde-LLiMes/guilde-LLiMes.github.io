@@ -42,11 +42,6 @@ TITLE=$(grep -m1 '^title:' "$MODIFIED" | sed 's/^title: *//' | tr -d '"')
 # Extract slug from filename (after date)
 SLUG=$(basename "$MODIFIED" .md | sed 's/^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}-//')
 
-# Extract date components from filename
-YEAR=$(basename "$MODIFIED" | grep -o '^[0-9]\{4\}')
-MONTH=$(basename "$MODIFIED" | grep -o '^[0-9]\{4\}-[0-9]\{2\}' | cut -d'-' -f2)
-DAY=$(basename "$MODIFIED" | grep -o '^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}' | cut -d'-' -f3)
-
 # Always output to _site/diff/ so Jekyll serves it
 mkdir -p _site/diff
 OUTPUT="_site/diff/${SLUG}.html"
@@ -178,7 +173,7 @@ cat > "$OUTPUT" << EOF
 <body>
   <h1>Side-by-Side Diff: ${TITLE:-Post}</h1>
   <p class="meta">
-    <a href="http://localhost:4000/posts/${YEAR}/${MONTH}/${DAY}/${SLUG}/">View published post</a>
+    <a href="http://localhost:4000/posts/${SLUG}/">View published post</a>
   </p>
   <div class="diff-wrap">
     <div class="diff-header">
